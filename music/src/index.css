@@ -1,3 +1,113 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background: #16151A;
+    color: white;
+    font-family: 'Open sans', sans-serif;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #7D8087;
+    background-image: linear-gradient(#25a56a, #25a56a);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+}
+
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.notification-drop::-webkit-scrollbar {
+    display: none;
+}
+
+.pages-menu-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+.pages-menu-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.pages-menu-list::-webkit-scrollbar-thumb {
+    background: #25a56a;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+.pages-menu-list::-webkit-scrollbar-thumb:hover {
+    background: #1b8654;
+}
+
+@layer components {
+    .title {
+        font-family: 'Inter', sans-serif;
+        color: theme('colors.white');
+        font-weight: 400;
+        font-size: theme('fontSize.title-md');
+    }
+
+    .menu-text {
+        font-size: 16px;
+        color: theme('colors.grey-C0');
+        line-height: 1.5;
+        font-weight: 400;
+        transition: theme('transitionDuration.200');
+    }
+
+    .menu-icon {
+        font-size: 22px;
+        color: theme('colors.grey-C0');
+        transition: theme('transitionDuration.200');
+    }
+
+    .menu-icon--active {
+        color: theme('colors.emerald');
+    }
+
+    .menu-text--active {
+        color: white;
+    }
+
+
+    .pages-menu-list {
+        list-style: none;
+    }
+
+    .pages-menu-list li::before {
+        content: "\2022";
+        color: theme('colors.emerald');
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    .pages-menu-list li {
+        color: theme('colors.grey-C0');
+        font-size: 14px;
+    }
+}
