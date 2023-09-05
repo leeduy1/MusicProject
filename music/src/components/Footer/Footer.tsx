@@ -30,7 +30,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className='flex min-[1040px]:justify-around justify-between w-full flex-wrap'>
+        <div className='flex min-[1040px]:justify-around justify-between w-full flex-wrap gap-y-[50px]'>
           {footerLinks.map((item) => (
             <div className='sm:basis-[25%] basis-[50%]'>
               <p className='text-[16px] font-[500] font-inter block mb-[20px]'>{item.title}</p>
@@ -51,9 +51,9 @@ function Footer() {
           ))}
         </div>
       </div>
-      <div className='w-full h-[80px] border-t-[1px] border-white border-opacity-[0.1] flex items-center justify-between'>
+      <div className='w-full border-t-[1px] border-white border-opacity-[0.1] flex items-center justify-between min-[678px]:flex-row flex-col-reverse py-[25px] gap-[20px]'>
         <span>© Volna, 2021. Created by LD - Team.</span>
-        <ul className='flex gap-[15px]'>
+        <ul className='flex gap-[15px] flex-wrap justify-center'>
           {socialMedia.length > 0 &&
             socialMedia.map((item, index) => (
               <li key={index}>

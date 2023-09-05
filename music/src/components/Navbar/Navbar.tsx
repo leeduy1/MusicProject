@@ -77,10 +77,10 @@ function Navbar() {
           <FiSearch className='absolute right-5' size={24} />
         </div>
       </div>
-      <div className='flex items-center gap-[30px]'>
-        <div className='flex items-center gap-[30px] pr-[30px] border-r-[1px] border-white border-opacity-[0.1]'>
+      <div className='flex items-center sm:gap-[30px] gap-[15px]'>
+        <div className='flex items-center sm:gap-[30px] gap-[15px] sm:pr-[30px] pr-0 sm:border-r-[1px] border-none border-white border-opacity-[0.1]'>
           <FiSearch className='xl:hidden block' size={24} />
-          <div className='relative cursor-pointer group'>
+          <div className='relative cursor-pointer group min-[420px]:block hidden'>
             <MdNotifications size={24} />
             <Notifications className='group-hover:scale-100' title='View all'>
               {notificationData.length > 0 &&
@@ -90,7 +90,7 @@ function Navbar() {
               {notificationData.length}
             </span>
           </div>
-          <div className='relative cursor-pointer group'>
+          <div className='relative cursor-pointer group min-[420px]:block hidden'>
             <AiOutlineShoppingCart size={24} />
             <Notifications className='group-hover:scale-100' title='Go to cart'>
               {userProducts.length > 0 && userProducts.map((product) => <CartItem {...product} />)}
@@ -101,7 +101,7 @@ function Navbar() {
           </div>
         </div>
         <div className='flex items-center cursor-pointer gap-[10px] group'>
-          <p className='group-hover:text-white text-grey-C0 duration-200'>Sign in</p>
+          <p className='group-hover:text-white text-grey-C0 duration-200 sm:block hidden'>Sign in</p>
           <HiOutlineLogin className='text-grey-C0 group-hover:text-emerald duration-200' size={28} />
           <FaBars className='xl:hidden block' size={28} />
         </div>
