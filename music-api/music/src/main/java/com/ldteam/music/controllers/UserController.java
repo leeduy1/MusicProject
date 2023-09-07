@@ -1,8 +1,10 @@
 package com.ldteam.music.controllers;
 
-import com.ldteam.music.entities.UserEntity;
+import com.ldteam.music.entities.User;
 import com.ldteam.music.repositories.UserRepository;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.web.bind.annotation.*;
@@ -16,22 +18,22 @@ public class UserController {
     private final UserRepository userRepository;
 
     @GetMapping
-    public List<UserEntity> getAllUsers() {
+    public List<User> getAllUsers() {
         return this.userRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public UserEntity getUser(@PathVariable("id") Long id) {
-        return userRepository.findById(id).orElse(new UserEntity());
+    public User getUser(@PathVariable("id") Long id) {
+        return userRepository.findById(id).orElse(new User());
     }
 
     @PostMapping
-    public UserEntity createUser(@Valid @RequestBody UserEntity user) {
+    public User createUser(@Valid @RequestBody User user) {
         return userRepository.save(user);
     }
 
     @PutMapping("/{id}")
-    public UserEntity updateUser(@PathVariable("id") Long id, @Valid @RequestBody @NotNull UserEntity user) {
+    public User updateUser(@PathVariable("id") Long id, @Valid @RequestBody @NotNull User user) {
         user.setId(id);
         return userRepository.save(user);
     }
