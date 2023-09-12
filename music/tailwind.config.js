@@ -18,7 +18,9 @@ export default {
       screens: {
         xl: '1200px'
       }
+
     }
   },
   plugins: []
 }
+

@@ -82,7 +82,7 @@ function Navbar() {
           <FiSearch className='xl:hidden block' size={24} />
           <div className='relative cursor-pointer group min-[420px]:block hidden'>
             <MdNotifications size={24} />
-            <Notifications className='group-hover:scale-100' title='View all'>
+            <Notifications className='z-10 group-hover:scale-100' title='View all'>
               {notificationData.length > 0 &&
                 notificationData.map((notification) => <NotificationItem {...notification} />)}
             </Notifications>
