@@ -16,11 +16,13 @@ export default {
         inter: ['Inter', 'sans-serif']
       },
       screens: {
-        xl: '1200px'
+        xl: '1200px',
+        lg: {'max': '1200px'},
+        vl: {'max': '992px'}
       }
 
     }
   },
-  plugins: []
+
 }
 
