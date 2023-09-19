@@ -18,7 +18,10 @@ export default {
       screens: {
         xl: '1200px',
         lg: {'max': '1200px'},
-        vl: {'max': '992px'}
+        vl: {'max': '992px'},
+        xn: {'min': '992px'},
+        sx: {'min': '576px'},
+        jv: {'min': '400px'},
       }
 
     }
