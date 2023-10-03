@@ -1,5 +1,5 @@
-import App from '~/App'
+import Home from '~/pages/Home'
 
-const publicRoutes = [{ path: '/', component: App }]
+const publicRoutes = [{ path: '/', component: Home }]
 
 export { publicRoutes }
