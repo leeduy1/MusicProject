@@ -22,6 +22,9 @@ export default {
         xn: {'min': '992px'},
         sx: {'min': '576px'},
         jv: {'min': '400px'},
+      },
+      spacing:  {
+        
       }
 
     }

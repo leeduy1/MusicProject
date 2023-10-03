@@ -7,9 +7,10 @@ import { socialMedia } from '~/store/socialMedia'
 
 function Footer() {
   return (
-    <footer className='px-[30px] w-full pt-[60px] h-[375px]'>
-      <div className='flex gap-[120px] mb-[60px] min-[1040px]:flex-nowrap flex-wrap'>
-        <div className='flex flex-col gap-[15px]'>
+    <footer className='px-[30px] w-full pt-[60px] h-[375px] bg-[#222227]'>
+      <div className='flex flex-row justify-start items-start relative flex-wrap'>
+        <div className='flex flex-row justify-start items-center w-[30%]'>
+          <div className='flex flex-col gap-[15px]'>
           <Logo />
           <p className='text-[14px] text-grey-C0 font-open-sans leading-6'>
             Record Label & Internet Radio, <br />
@@ -29,8 +30,9 @@ function Footer() {
               </Link>
             </li>
           </ul>
+          </div>
         </div>
-        <div className='flex min-[1040px]:justify-around justify-between w-full flex-wrap gap-y-[50px]'>
+        <div className='flex w-[70%] justify-start items-center flex-row flex-wrap '>
           {footerLinks.map((item) => (
             <div className='sm:basis-[25%] basis-[50%]'>
               <p className='text-[16px] font-[500] font-inter block mb-[20px]'>{item.title}</p>

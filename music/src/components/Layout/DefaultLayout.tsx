@@ -9,6 +9,7 @@ function DefaultLayout({ children }: IDefaultLayout) {
   return (
     <div className='flex w-full'>
       <Sidebar />
+      <div className='xl:block hidden w-[280px] h-[100vh] border-r-[1px] border-[#222222] relative'></div>
       <div className='xl:w-[calc(100%_-_280px)] w-full'>
         <Navbar />
         {children}

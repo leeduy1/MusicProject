@@ -129,7 +129,7 @@ function Sidebar() {
   }, [volumn])
 
   return (
-    <div className='xl:block hidden w-[280px] h-[100vh] border-r-[1px] border-[#222222] relative'>
+    <div className='xl:block hidden w-[280px] left-0 top-0 bottom-0 border-r-[1px] border-[#222222] fixed'>
       <div className='w-full h-[70px] flex items-center px-[30px]'>
         <Logo />
       </div>
