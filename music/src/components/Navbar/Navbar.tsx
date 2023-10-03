@@ -11,6 +11,7 @@ import Notifications from '../Notifications'
 import NotificationItem from '../NotificationItem'
 import CartItem from '../CartItem'
 import Logo from '../Logo'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   const notificationData = [
@@ -59,7 +60,7 @@ function Navbar() {
       <div className='xl:flex xl:items-center hidden gap-[60px]'>
         <ul className='flex gap-[30px]'>
           <li className='text-[16px] font-inter text-grey-C0 font-[400]'>
-            <a href='/'>Profile</a>
+            <Link to='/profile'>Profile</Link>
           </li>
           <li className='text-[16px] font-inter text-grey-C0 font-[400]'>
             <a href='/'>About</a>
@@ -82,7 +83,7 @@ function Navbar() {
           <FiSearch className='xl:hidden block' size={24} />
           <div className='relative cursor-pointer group min-[420px]:block hidden'>
             <MdNotifications size={24} />
-            <Notifications className='group-hover:scale-100' title='View all'>
+            <Notifications className='z-10 group-hover:scale-100' title='View all'>
               {notificationData.length > 0 &&
                 notificationData.map((notification) => <NotificationItem {...notification} />)}
             </Notifications>
@@ -92,7 +93,7 @@ function Navbar() {
           </div>
           <div className='relative cursor-pointer group min-[420px]:block hidden'>
             <AiOutlineShoppingCart size={24} />
-            <Notifications className='group-hover:scale-100' title='Go to cart'>
+            <Notifications className='z-10 group-hover:scale-100' title='Go to cart'>
               {userProducts.length > 0 && userProducts.map((product) => <CartItem {...product} />)}
             </Notifications>
             <span className='bg-emerald rounded-[4px] h-4 absolute -top-1 -right-[50%] text-[10px] px-[5px]'>
