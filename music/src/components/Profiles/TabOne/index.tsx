@@ -26,8 +26,8 @@ function TabOne() {
 
   return (
     <div className='duration-[0.4s] ease-linear delay-0 transition-opacity' id='tab-1'>
-      <div className='grow shrink-0 basis-full flex flex-wrap md:mx-[-15px] mx-[-10px] '>
-        <div className='md:px-[15px] vl:basis-full vl:max-w-full lg:basis-1/2 lg:max-w-[50%] px-2.5 basis-3/12 max-w-[25%]'>
+      <div className='flex flex-wrap md:mx-[-15px] mx-[-10px] '>
+        <div className='md:px-[15px] md:basis-1/2 md:max-w-[50%] px-2.5 xl:basis-3/12 xl:max-w-[25%] basis-full max-w-full'>
           <div className='md:mt-[30px] mt-5 flex flex-col items-start justify-center relative p-5 rounded-2xl w-full border border-solid border-[#222227]'>
             <span className='text-[20px] leading-[100%] font-normal mb-0 w-full flex flex-row justify-start items-end'>
               My Balance{' '}
@@ -44,7 +44,7 @@ function TabOne() {
             <BalanceIcon className='absolute bottom-[15px] right-[15px] w-[30px] h-auto' />
           </div>
         </div>
-        <div className='md:px-[15px] vl:basis-full vl:max-w-full lg:basis-1/2 lg:max-w-[50%] px-2.5 basis-3/12 max-w-[25%]'>
+        <div className='md:px-[15px] md:basis-1/2 md:max-w-[50%] px-2.5 xl:basis-3/12 xl:max-w-[25%] basis-full max-w-full'>
           <div className='md:mt-[30px] mt-5 flex flex-col items-start justify-center relative p-5 rounded-2xl w-full border border-solid border-[#222227]'>
             <span className='text-[20px] leading-[100%] font-normal mb-0 w-full flex flex-row justify-start items-end'>
               Premium Plan
@@ -55,7 +55,7 @@ function TabOne() {
             <PremiunPlanIcon className='absolute bottom-[15px] right-[15px] w-[30px] h-auto' />
           </div>
         </div>
-        <div className='md:px-[15px] vl:basis-full vl:max-w-full lg:basis-1/2 lg:max-w-[50%] px-2.5 basis-3/12 max-w-[25%]'>
+        <div className='md:px-[15px] md:basis-1/2 md:max-w-[50%] px-2.5 xl:basis-3/12 xl:max-w-[25%] basis-full max-w-full'>
           <div className='md:mt-[30px] mt-5 flex flex-col items-start justify-center relative p-5 rounded-2xl w-full border border-solid border-[#222227]'>
             <span className='text-[20px] leading-[100%] font-normal mb-0 w-full flex flex-row justify-start items-end'>
               Minutes listened
@@ -66,7 +66,7 @@ function TabOne() {
             <MinuteListenedIcon className='absolute bottom-[15px] right-[15px] w-[30px] h-auto' />
           </div>
         </div>
-        <div className='md:px-[15px] vl:basis-full vl:max-w-full lg:basis-1/2 lg:max-w-[50%] px-2.5 basis-3/12 max-w-[25%]'>
+        <div className='md:px-[15px] md:basis-1/2 md:max-w-[50%] px-2.5 xl:basis-3/12 xl:max-w-[25%] basis-full max-w-full'>
           <div className='md:mt-[30px] mt-5 flex flex-col items-start justify-center relative p-5 rounded-2xl w-full border border-solid border-[#222227]'>
             <span className='text-[20px] leading-[100%] font-normal mb-0 w-full flex flex-row justify-start items-end'>
               Promo Code
@@ -87,9 +87,9 @@ function TabOne() {
           </div>
         </div>
       </div>
-      <div className='grow shrink-0 basis-full flex flex-wrap md:mx-[-15px] mx-[-10px] '>
+      <div className='flex flex-wrap md:mx-[-15px] mx-[-10px]'>
         {/* dashbox */}
-        <div className='md:px-[15px] px-2.5 vl:basis-full vl:max-w-full basis-1/2 max-w-[50%] relative w-full'>
+        <div className='md:px-[15px] px-2.5 basis-full max-w-full md:basis-1/2 md:max-w-[50%] relative w-full'>
           <div className='md:mt-[30px] mt-5 rounded-xl overflow-hidden border border-[#222227] border-solid'>
             <div className='flex flex-row justify-between items-center p-5 border border-[#222227] border-solid'>
               <h3 className='flex flex-row justify-start items-center font-normal text-xl leading-[100%] mb-0 mt-0 '>
@@ -233,7 +233,7 @@ function TabOne() {
         </div>
         {/* end dashbox */}
         {/* dashbox */}
-        <div className='md:px-[15px] px-2.5 vl:basis-full vl:max-w-full basis-1/2 max-w-[50%] relative w-full'>
+        <div className='md:px-[15px] px-2.5 basis-full max-w-full md:basis-1/2 md:max-w-[50%] relative w-full'>
           <div className='md:mt-[30px] mt-5 rounded-xl overflow-hidden border border-[#222227] border-solid'>
             <div className='flex flex-row justify-between items-center p-5 border border-[#222227] border-solid'>
               <h3 className='flex flex-row justify-start items-center font-normal text-xl leading-[100%] mb-0 mt-0 '>

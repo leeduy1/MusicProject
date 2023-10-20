@@ -11,25 +11,25 @@ function Footer() {
       <div className='flex flex-row justify-start items-start relative flex-wrap'>
         <div className='flex flex-row justify-start items-center w-[30%]'>
           <div className='flex flex-col gap-[15px]'>
-          <Logo />
-          <p className='text-[14px] text-grey-C0 font-open-sans leading-6'>
-            Record Label & Internet Radio, <br />
-            Online music HTML Template.
-          </p>
-          <ul className='flex flex-col gap-[15px]'>
-            <li className='flex items-center gap-[12px]'>
-              <BsMailbox size={18} className='text-emerald' />
-              <Link className='text-[16px] text-grey-C0' to={'/'}>
-                support@volna.template
-              </Link>
-            </li>
-            <li className='flex items-center gap-[12px]'>
-              <BsFillTelephoneFill size={18} className='text-emerald' />
-              <Link className='text-[16px] text-grey-C0' to={'/'}>
-                8 234 567-89-00
-              </Link>
-            </li>
-          </ul>
+            <Logo />
+            <p className='text-[14px] text-grey-C0 font-open-sans leading-6'>
+              Record Label & Internet Radio, <br />
+              Online music HTML Template.
+            </p>
+            <ul className='flex flex-col gap-[15px]'>
+              <li className='flex items-center gap-[12px]'>
+                <BsMailbox size={18} className='text-emerald' />
+                <Link className='text-[16px] text-grey-C0' to={'/'}>
+                  support@volna.template
+                </Link>
+              </li>
+              <li className='flex items-center gap-[12px]'>
+                <BsFillTelephoneFill size={18} className='text-emerald' />
+                <Link className='text-[16px] text-grey-C0' to={'/'}>
+                  8 234 567-89-00
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div className='flex w-[70%] justify-start items-center flex-row flex-wrap '>

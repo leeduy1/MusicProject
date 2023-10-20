@@ -59,13 +59,13 @@ function Navbar() {
       <Logo className='xl:hidden block' />
       <div className='xl:flex xl:items-center hidden gap-[60px]'>
         <ul className='flex gap-[30px]'>
-          <li className='text-[16px] font-inter text-grey-C0 font-[400]'>
+          <li className='text-[16px] font-inter text-grey-C0 font-[400] hover:text-[#25a56a] ease-in-out duration-[0.5s]'>
             <Link to='/profile'>Profile</Link>
           </li>
-          <li className='text-[16px] font-inter text-grey-C0 font-[400]'>
+          <li className='text-[16px] font-inter text-grey-C0 font-[400] hover:text-[#25a56a] ease-in-out duration-[0.5s]'>
             <a href='/'>About</a>
           </li>
-          <li className='text-[16px] font-inter text-grey-C0 font-[400]'>
+          <li className='text-[16px] font-inter text-grey-C0 font-[400] hover:text-[#25a56a] ease-in-out duration-[0.5s]'>
             <a href='/'>Contacts</a>
           </li>
         </ul>

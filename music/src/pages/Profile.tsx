@@ -4,7 +4,9 @@ import BreadcrumbIcon from '~/assets/Icons/BreadcrumbIcon'
 import ProfileAvatar from '~/assets/Icons/ProfileAvatar'
 import SignoutIcon from '~/assets/Icons/SignoutIcon'
 import TabOne from '~/components/Profiles/TabOne'
+import TabThree from '~/components/Profiles/TabThree'
 import TabTwo from '~/components/Profiles/TabTwo'
+import TabFour from '~/components/Profiles/TabFour'
 
 function Profile() {
   //hooks useState, useEffect, ...
@@ -22,12 +24,16 @@ function Profile() {
         return <TabOne />
       case 2:
         return <TabTwo />
+      case 3:
+        return <TabThree />
+      case 4:
+        return <TabFour />
       default:
         break
     }
   }
   return (
-    <div className='md:pt-[30px] md:pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
+    <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
       <div className='w-full'>
         {/* BreadCrumb */}
         <div className='md: flex flex-wrap basic-full grow-0 shrink-0'>
@@ -135,7 +141,7 @@ function Profile() {
             <span className='opacity-75 duration-[0.5s] ease-in-out mr-[10px] md:block hidden group-hover:opacity-100 cursor-pointer'>
               Sign out
             </span>
-            <SignoutIcon className='duration-[0.5] ease-in-out opacity-75 group-hover:text-green-700' />
+            <SignoutIcon className='opacity-75 group-hover:text-[#25a56a] duration-[0.5s] ease-in-out' />
           </button>
         </div>
         {/* content tabs */}

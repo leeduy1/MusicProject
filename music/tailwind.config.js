@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -15,19 +17,15 @@ export default {
         'open-sans': ['Open Sans', 'sans-serif'],
         inter: ['Inter', 'sans-serif']
       },
-      screens: {
-        xl: '1200px',
-        lg: {'max': '1200px'},
-        vl: {'max': '992px'},
-        xn: {'min': '992px'},
-        sx: {'min': '576px'},
-        jv: {'min': '400px'},
-      },
-      spacing:  {
-        
-      }
-
-    }
+    },
+    screens: {
+      // lg: {'max': '1200px'},
+      // vl: {'max': '992px'},
+      // xn: {'min': '992px'},
+      // sx: {'min': '576px'},
+      // jv: {'min': '400px'},
+      ...defaultTheme.screens
+    },
   },
 
 }
