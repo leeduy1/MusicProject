@@ -102,6 +102,7 @@ function Artists() {
     'Indie',
     'Jazz',
     'Latino',
+    
     'R&B/Soul',
     'Rock'
   ]
