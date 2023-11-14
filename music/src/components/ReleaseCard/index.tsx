@@ -9,7 +9,7 @@ interface IProps {
 }
 function ReleaseCard({ thumbnail, numbersOfVideo, numbersOfListener, name, authors }: IProps) {
   return (
-    <div className='w-[172px] h-[172px]'>
+    <div className='w-[172px] h-[172px] my-8'>
       <div className='w-full h-full overflow-hidden rounded-[12px] relative group'>
         <img src={thumbnail} alt='' className='w-full h-full group-hover:scale-125 duration-300' />
         <div className='cursor-pointer absolute opacity-0 group-hover:opacity-100 duration-300 top-0 bottom-0 left-0 right-0 bg-black bg-opacity-50 flex flex-col items-center justify-center'>

@@ -1,12 +1,7 @@
 
 import { Link } from 'react-router-dom'
-import AddIcon from '~/assets/Icons/AddIcon'
 import BalanceIcon from '~/assets/Icons/BalanceIcon'
-import CoverIcon from '~/assets/Icons/CoverIcon'
-import CoverIcon1 from '~/assets/Icons/CoverIcon1'
-import CoverIcon2 from '~/assets/Icons/CoverIcon2'
 import DashFreshIcon from '~/assets/Icons/DashFreshIcon'
-import ExportIcon from '~/assets/Icons/ExportIcon'
 import MinuteListenedIcon from '~/assets/Icons/MinutesListenedIcon'
 import NewIcon1 from '~/assets/Icons/NewIcon1'
 import NoficationDashboxIcon1 from '~/assets/Icons/NoficationDashboxIcon1'
@@ -14,7 +9,8 @@ import NoficationDashboxIcon2 from '~/assets/Icons/NoficationDashboxIcon2'
 import NoficationDashboxIcon3 from '~/assets/Icons/NoficationDashboxIcon3'
 import NoficationDashboxIcon4 from '~/assets/Icons/NoficationDashboxIcon4'
 import NoficationProfile from '~/assets/Icons/NoficationProfile'
-import PremiunPlanIcon from '~/assets/Icons/PremiunPlanIcon'
+import PremiunPlanIcon from '~/assets/Icons/PremiumPlanIcon'
+import NewItem from '~/components/NewItem'
 
 function TabOne() {
   // const [promoCode, setPromoCode] = useState('')
@@ -52,7 +48,7 @@ function TabOne() {
             <p className='text-[14px] text-[#c0c0c0] mb-0 mt-5 font-normal leading-[100%]'>
               <b className='text-[20px] font-medium'>$39.99</b>/month
             </p>
-            <PremiunPlanIcon className='absolute bottom-[15px] right-[15px] w-[30px] h-auto' />
+            <PremiunPlanIcon className='absolute bottom-[15px] right-[15px] w-[30px] h-auto fill-emerald' />
           </div>
         </div>
         <div className='md:px-[15px] md:basis-1/2 md:max-w-[50%] px-2.5 xl:basis-3/12 xl:max-w-[25%] basis-full max-w-full'>
@@ -251,165 +247,7 @@ function TabOne() {
                 </Link>
               </div>
             </div>
-            <div className='p-5 relative block w-full'>
-              <ul className='md:mt-0'>
-                <li className='flex flex-row justify-start items-center mb-2.5 pb-0.5 border-b border-solid border-[#222227] h-[58px]'>
-                  <Link
-                    className='flex flex-row justify-center items-center rounded-lg overflow-hidden duration-[0.5s] ease-in-out'
-                    to=''
-                  >
-                    <CoverIcon className='w-[48px] h-auto opacity-100 duration-[0.5s] ease-in-out relative align-middle border-none' />
-                    <CoverIcon1 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                    <CoverIcon2 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                  </Link>
-                  <div className='inline-flex flex-col justify-start items-start ml-[15px] mr-auto xn:max-w-[200px] sx:max-w-[150px] jv:max-w-[110px]'>
-                    <h3 className='block w-full text-base font-normal mb-0 whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Em của ngày hôm qua</Link>
-                    </h3>
-                    <span className='block w-full text-[14px] leading-6 font-normal text-[#c0c0c0] whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Sơn Tùng MTP</Link>
-                    </span>
-                  </div>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15]'
-                  >
-                    <AddIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[rgba(128,81,212,0.15)] bg-opacity-[0.15]'
-                  >
-                    <ExportIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <span className='ml-[15px] text-[13px] text-[#c0c0c0] '>3:12</span>
-                </li>
-                <li className='flex flex-row justify-start items-center mb-2.5 pb-0.5 border-b border-solid border-[#222227] h-[58px]'>
-                  <Link
-                    className='flex flex-row justify-center items-center rounded-lg overflow-hidden duration-[0.5s] ease-in-out'
-                    to=''
-                  >
-                    <CoverIcon className='w-[48px] h-auto opacity-100 duration-[0.5s] ease-in-out relative align-middle border-none' />
-                    <CoverIcon1 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                    <CoverIcon2 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                  </Link>
-                  <div className='inline-flex flex-col justify-start items-start ml-[15px] mr-auto xn:max-w-[200px] sx:max-w-[150px] jv:max-w-[110px]'>
-                    <h3 className='block w-full text-base font-normal mb-0 whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Không phải dạng vừa đâu</Link>
-                    </h3>
-                    <span className='block w-full text-[14px] leading-6 font-normal text-[#c0c0c0] whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Sơn Tùng MTP</Link>
-                    </span>
-                  </div>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15]'
-                  >
-                    <AddIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[rgba(128,81,212,0.15)] bg-opacity-[0.15]'
-                  >
-                    <ExportIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <span className='ml-[15px] text-[13px] text-[#c0c0c0] '>3:12</span>
-                </li>
-                <li className='flex flex-row justify-start items-center mb-2.5 pb-0.5 border-b border-solid border-[#222227] h-[58px]'>
-                  <Link
-                    className='flex flex-row justify-center items-center rounded-lg overflow-hidden duration-[0.5s] ease-in-out'
-                    to=''
-                  >
-                    <CoverIcon className='w-[48px] h-auto opacity-100 duration-[0.5s] ease-in-out relative align-middle border-none' />
-                    <CoverIcon1 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                    <CoverIcon2 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                  </Link>
-                  <div className='inline-flex flex-col justify-start items-start ml-[15px] mr-auto xn:max-w-[200px] sx:max-w-[150px] jv:max-w-[110px]'>
-                    <h3 className='block w-full text-base font-normal mb-0 whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Making my way</Link>
-                    </h3>
-                    <span className='block w-full text-[14px] leading-6 font-normal text-[#c0c0c0] whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Sơn Tùng MTP</Link>
-                    </span>
-                  </div>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15]'
-                  >
-                    <AddIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[rgba(128,81,212,0.15)] bg-opacity-[0.15]'
-                  >
-                    <ExportIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <span className='ml-[15px] text-[13px] text-[#c0c0c0] '>3:12</span>
-                </li>
-                <li className='flex flex-row justify-start items-center mb-2.5 pb-0.5 border-b border-solid border-[#222227] h-[58px]'>
-                  <Link
-                    className='flex flex-row justify-center items-center rounded-lg overflow-hidden duration-[0.5s] ease-in-out'
-                    to=''
-                  >
-                    <CoverIcon className='w-[48px] h-auto opacity-100 duration-[0.5s] ease-in-out relative align-middle border-none' />
-                    <CoverIcon1 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                    <CoverIcon2 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                  </Link>
-                  <div className='inline-flex flex-col justify-start items-start ml-[15px] mr-auto xn:max-w-[200px] sx:max-w-[150px] jv:max-w-[110px]'>
-                    <h3 className='block w-full text-base font-normal mb-0 whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Hồng Nhan</Link>
-                    </h3>
-                    <span className='block w-full text-[14px] leading-6 font-normal text-[#c0c0c0] whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Jack-J97</Link>
-                    </span>
-                  </div>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15]'
-                  >
-                    <AddIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[rgba(128,81,212,0.15)] bg-opacity-[0.15]'
-                  >
-                    <ExportIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <span className='ml-[15px] text-[13px] text-[#c0c0c0] '>3:12</span>
-                </li>
-                <li className='flex flex-row justify-start items-center mb-0 pb-0 border-none h-[48px]'>
-                  <Link
-                    className='flex flex-row justify-center items-center rounded-lg overflow-hidden duration-[0.5s] ease-in-out'
-                    to=''
-                  >
-                    <CoverIcon className='w-[48px] h-auto opacity-100 duration-[0.5s] ease-in-out relative align-middle border-none' />
-                    <CoverIcon1 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                    <CoverIcon2 className='absolute opacity-0 fill-[#fff] w-[24px] mt-px mr-0 mb-0 ml-px duration-[0.5s] ease-in-out overflow-hidden align-middle' />
-                  </Link>
-                  <div className='inline-flex flex-col justify-start items-start ml-[15px] mr-auto xn:max-w-[200px] sx:max-w-[150px] jv:max-w-[110px]'>
-                    <h3 className='block w-full text-base font-normal mb-0 whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Yêu</Link>
-                    </h3>
-                    <span className='block w-full text-[14px] leading-6 font-normal text-[#c0c0c0] whitespace-nowrap overflow-hidden text-ellipsis break-words'>
-                      <Link to=''>Khắc Việt</Link>
-                    </span>
-                  </div>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15]'
-                  >
-                    <AddIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <Link
-                    to=''
-                    className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[rgba(128,81,212,0.15)] bg-opacity-[0.15]'
-                  >
-                    <ExportIcon className='w-[18px] h-auto' />
-                  </Link>
-                  <span className='ml-[15px] text-[13px] text-[#c0c0c0] '>3:12</span>
-                </li>
-              </ul>
-            </div>
+            <NewItem />
           </div>
         </div>
         {/* end dashbox */}

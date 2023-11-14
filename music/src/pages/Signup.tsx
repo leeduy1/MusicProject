@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import BreadcrumbIcon from '~/assets/Icons/BreadcrumbIcon'
 import Facebookicon1 from '~/assets/Icons/Facebookicon1'
@@ -5,6 +6,59 @@ import GoogleIcon from '~/assets/Icons/GoogleIcon'
 import Twittericon1 from '~/assets/Icons/Twittericon1'
 import Logo from '~/components/Logo'
 function Signup() {
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState('')
+  const [password, setPassword] = useState('')
+  const isPasswordValid = (password: string) => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+
+    return passwordRegex.test(password)
+  }
+  const isEmailValid = (email: string) => {
+    // Regular expression to validate email format
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+
+    return emailRegex.test(email)
+  }
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    console.log(value)
+
+    setPassword(value)
+
+    if (!isPasswordValid(value)) {
+      setError('Invalid password')
+    }
+    setError('')
+  }
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    setEmail(value)
+
+    if (!isEmailValid(value)) {
+      setError('Invalid email address')
+    }
+    setError('')
+  }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (isEmailValid(email)) {
+      // Handle form submission or API request with the valid email
+      console.log('Valid email: ', email)
+    } else {
+      setError('Please enter a valid email address')
+    }
+    e.preventDefault()
+    if (isPasswordValid(password)) {
+      // Handle form submission or API request with the valid email
+      console.log('Valid pass: ', password)
+    } else {
+      setError('Please enter a valid pass address')
+    }
+  }
+
   return (
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
       <div className='w-full'>
@@ -31,22 +85,26 @@ function Signup() {
               <form
                 className='sm:p-10 rounded-xl py-[30px] px-5 flex-col flex justify-center items-center w-full relative max-w-[420px] border border-solid border-[#555557]'
                 action=''
+                onSubmit={handleSubmit}
               >
                 <Link to='/' className='mb-[30px] sm:mb-10 block'>
                   <Logo className='w-[100px]'></Logo>
                 </Link>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
                 <div className='flex justify-start items-end flex-row flex-wrap relative mb-5 w-full'>
                   <input
                     type='name'
                     className='bg-[#222227] rounded-xl h-[46px] relative text-white text-base w-full px-5 font-inter'
-                    placeholder='Name'
+                    placeholder='User Name'
                   />
                 </div>
                 <div className='flex justify-start items-end flex-row flex-wrap relative mb-5 w-full'>
                   <input
-                    type='email'
+                    type='text'
                     className='bg-[#222227] rounded-xl h-[46px] relative text-white text-base w-full px-5 font-inter'
                     placeholder='Email'
+                    value={email}
+                    onChange={handleEmailChange}
                   />
                 </div>
                 <div className='flex justify-start items-end flex-row flex-wrap relative mb-5 w-full text-left'>
@@ -54,6 +112,8 @@ function Signup() {
                     type='password'
                     className='bg-[#222227] rounded-xl h-[46px] relative text-white text-base w-full px-5 font-inter'
                     placeholder='Password'
+                    value={password}
+                    onChange={handlePasswordChange}
                   />
                 </div>
                 <div className='flex justify-start items-end flex-row flex-wrap relative mb-5 w-full text-left'></div>
@@ -95,5 +155,4 @@ function Signup() {
     </div>
   )
 }
-
 export default Signup

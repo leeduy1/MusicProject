@@ -10,7 +10,7 @@ function Footer() {
     <footer className='px-[30px] w-full pt-[60px] h-[375px] bg-[#222227]'>
       <div className='flex flex-row justify-start items-start relative flex-wrap'>
         <div className='flex flex-row justify-start items-center w-[30%]'>
-          <div className='flex flex-col gap-[15px]'>
+          <div className='flex flex-col gap-[15px] order-2'>
             <Logo />
             <p className='text-[14px] text-grey-C0 font-open-sans leading-6'>
               Record Label & Internet Radio, <br />
