@@ -49,13 +49,13 @@ function NewItem() {
               </div>
               <Link
                 to=''
-                className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15]'
+                className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15] duration-500 ease-in-out hover:bg-opacity-50'
               >
-                <AddIcon className='w-[18px] h-auto' />
+                <AddIcon className='w-[18px] h-auto fill-emerald' />
               </Link>
               <Link
                 to=''
-                className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[rgba(128,81,212,0.15)] bg-opacity-[0.15]'
+                className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#8051d4] bg-opacity-[0.15] duration-500 ease-in-out hover:bg-opacity-50'
               >
                 <ExportIcon className='w-[18px] h-auto' />
               </Link>

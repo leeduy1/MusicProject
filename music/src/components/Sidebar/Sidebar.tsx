@@ -119,7 +119,8 @@ function Sidebar() {
     {
       page: EPages.NEWS,
       icon: <FaNewspaper />,
-      text: EPages.NEWS
+      text: EPages.NEWS,
+      url: '/news'
     }
   ]
 

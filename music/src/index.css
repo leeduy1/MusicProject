@@ -288,4 +288,21 @@ input[type="range"]::-webkit-slider-thumb {
 .product:hover::before{
   opacity: 0.5;
 }
+.news::before{
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+.news:hover::before{
+  opacity: 0.3;
+}
+
 

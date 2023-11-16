@@ -1,6 +1,7 @@
 import Artists from '~/pages/Artists'
 import Events from '~/pages/Events'
 import Home from '~/pages/Home'
+import News from '~/pages/News'
 import Podcasts from '~/pages/Podcasts'
 import Profile from '~/pages/Profile'
 import Releases from '~/pages/Releases'
@@ -17,7 +18,8 @@ const publicRoutes = [
   { path: '/releases', component: Releases },
   { path: '/events', component: Events },
   { path: '/podcasts', component: Podcasts },
-  { path: '/store', component: Store }
+  { path: '/store', component: Store },
+  { path: '/news', component: News }
 ]
 
 export { publicRoutes }
