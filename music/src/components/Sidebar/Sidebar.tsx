@@ -119,7 +119,8 @@ function Sidebar() {
     {
       page: EPages.NEWS,
       icon: <FaNewspaper />,
-      text: EPages.NEWS
+      text: EPages.NEWS,
+      url: '/news'
     }
   ]
 
@@ -144,7 +145,7 @@ function Sidebar() {
       <ul className='menu flex w-full flex-col gap-5 max-h-[calc(100vh_-_330px)] py-[30px] px-[30px] overflow-y-auto  overflow-x-hidden border-t-[1px] border-[#222222]'>
         {menuData.map((item) => (
           <Link
-            To={item.url}
+            to={item.url}
             key={item.page}
             className={`flex flex-col w-full gap-[15px] cursor-pointer group ${
               currentPage === item.page ? 'text-emerald' : ''
