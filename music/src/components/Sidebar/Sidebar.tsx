@@ -8,12 +8,14 @@ import { TbPlayerPlay, TbPlayerSkipBack, TbPlayerSkipForward } from 'react-icons
 import React, { useEffect, useState } from 'react'
 import { EPages } from '~/interfaces/pages.interface'
 import Logo from '../Logo'
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
   const [progress, setProgress] = useState('0')
   const [isShowPages, setIsShowPages] = useState(false)
   const [volumn, setVolumn] = useState('50')
-  const [currentPage, setCurrentPage] = useState(EPages.HOME)
+  const [currentPage, setCurrentPage] = useState<string>(EPages.HOME)
+  const [itemPages, setItemPages] = useState<string>('')
   const updateProgressBar = (progressValue: string, progressBarId: string) => {
     const progressBar = document.getElementById(progressBarId)
     if (progressBar) {
@@ -21,9 +23,9 @@ function Sidebar() {
     }
   }
 
-  const handleSetCurrentPage = (currentPage: EPages) => {
-    currentPage === EPages.PAGES ? setIsShowPages((prev) => !prev) : setIsShowPages(false)
-    setCurrentPage(currentPage)
+  const handleSetCurrentPage = (currentPageChange: string) => {
+    currentPageChange === EPages.PAGES ? setIsShowPages((prev) => !prev) : setIsShowPages(false)
+    setCurrentPage(currentPageChange)
   }
 
   const muteVolumn = () => {
@@ -59,46 +61,51 @@ function Sidebar() {
     {
       page: EPages.HOME,
       icon: <AiOutlineHome />,
-      text: EPages.HOME
+      text: EPages.HOME,
+      url: '/'
     },
     {
       page: EPages.ARTISTS,
       icon: <HiOutlineUsers />,
-      text: EPages.ARTISTS
+      text: EPages.ARTISTS,
+      url: '/artists'
     },
     {
       page: EPages.RELEASES,
       icon: <FaMusic />,
-      text: EPages.RELEASES
+      text: EPages.RELEASES,
+      url: '/releases'
     },
     {
       page: EPages.EVENTS,
       icon: <SlCalender />,
-      text: EPages.EVENTS
+      text: EPages.EVENTS,
+      url: '/events'
     },
     {
       page: EPages.PODCASTS,
       icon: <FaMicrophone />,
-      text: EPages.PODCASTS
+      text: EPages.PODCASTS,
+      url: '/podcasts'
     },
     {
       page: EPages.PAGES,
       icon: <AiFillFolderOpen />,
       text: EPages.PAGES,
       pages: [
-        { text: EPages.ARTISTS, url: '/' },
-        { text: EPages.EVENTS, url: '/' },
-        { text: EPages.RELEASES, url: '/' },
+        { text: EPages.ARTISTS, url: '/artists' },
+        { text: EPages.EVENTS, url: '/events' },
+        { text: EPages.RELEASES, url: '/releases' },
         { text: EPages.PRODUCT, url: '/' },
         { text: EPages.ARTICLE, url: '/' },
         { text: EPages.CART, url: '/' },
-        { text: EPages.PROFILE, url: '/' },
+        { text: EPages.PROFILE, url: '/profile' },
         { text: EPages.ABOUT, url: '/' },
         { text: EPages.CONTACTS, url: '/' },
         { text: EPages.PRICING_PLANS, url: '/' },
         { text: EPages.PRIVACY_POLICY, url: '/' },
-        { text: EPages.SIGN_IN, url: '/' },
-        { text: EPages.SIGN_UP, url: '/' },
+        { text: EPages.SIGN_IN, url: '/signin' },
+        { text: EPages.SIGN_UP, url: '/signup' },
         { text: EPages.FORGOT_PASSWORD, url: '/' },
         { text: EPages.PAGE_404, url: '/' }
       ]
@@ -106,7 +113,8 @@ function Sidebar() {
     {
       page: EPages.STORE,
       icon: <FaStore />,
-      text: EPages.STORE
+      text: EPages.STORE,
+      url: '/store'
     },
     {
       page: EPages.NEWS,
@@ -129,13 +137,14 @@ function Sidebar() {
   }, [volumn])
 
   return (
-    <div className='xl:block hidden w-[280px] left-0 top-0 bottom-0 border-r-[1px] border-[#222222] fixed'>
+    <div className='xl:block z-20 hidden w-[280px] left-0 top-0 bottom-0 border-r-[1px] border-[#222222] fixed'>
       <div className='w-full h-[70px] flex items-center px-[30px]'>
         <Logo />
       </div>
       <ul className='menu flex w-full flex-col gap-5 max-h-[calc(100vh_-_330px)] py-[30px] px-[30px] overflow-y-auto  overflow-x-hidden border-t-[1px] border-[#222222]'>
         {menuData.map((item) => (
-          <li
+          <Link
+            To={item.url}
             key={item.page}
             className={`flex flex-col w-full gap-[15px] cursor-pointer group ${
               currentPage === item.page ? 'text-emerald' : ''
@@ -165,13 +174,20 @@ function Sidebar() {
                 } transition-all duration-300 `}
               >
                 {item.pages.map((page) => (
-                  <li>
-                    <a href={page.url}>{page.text}</a>
+                  <li
+                    onClick={() => setItemPages(page.text)}
+                    className={`hover:text-emerald duration-300 ease-in-out ${
+                      itemPages === page.text ? 'text-emerald' : ''
+                    }`}
+                  >
+                    <Link className={`${console.log()}`} to={page.url}>
+                      {page.text}
+                    </Link>
                   </li>
                 ))}
               </ul>
             )}
-          </li>
+          </Link>
         ))}
       </ul>
       <div className='flex h-[262px] w-full flex-col items-center px-[30px] py-5 gap-[10px] absolute bottom-0 border-t-[1px] border-[#222222]'>

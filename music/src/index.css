@@ -68,7 +68,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .slick-arrow {
     top: calc(100% - 50px);
-    transition: all ease-in-out 0.1s;
+    transition: all ease-in-out 0.5s;
     color: white;
     z-index: 10;
 }
@@ -220,6 +220,57 @@ input[type="range"]::-webkit-slider-thumb {
   background: url('assets/Icons/checkmark.svg') no-repeat center/20px auto;
   border-radius: 6px;
   transform: scale(1);
+}
+.main_filter::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: -15px;
+  right: -15px;
+  width: auto;
+  top: 0;
+  border-top: 1px solid #222227;
+  border-bottom: 1px solid #222227;
+  bottom: 0;
+  background-color: #16151a;
+}
+.slide {
+  background-color: #25a56a;
+  color: white; 
+  transform: translate(5px);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.artist__cover:before{
+  content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(37,165,106,0.8) 0%, rgba(37,165,106,0) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+.artist__cover:hover::before{
+  opacity: 0.5;
+}
+.live__cover:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(45deg, rgba(37,165,106,0.8) 0%, rgba(37,165,106,0) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.live__cover:hover::before{
+  opacity: 0.5;
 }
 
 

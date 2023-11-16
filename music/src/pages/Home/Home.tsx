@@ -31,7 +31,7 @@ function Home() {
   ]
   return (
     <div className='container'>
-      <div className='slide-container min-[468px]:block hidden'>
+      <div className='slide-container min-[468px]:block hidden slideHome'>
         <Slider {...settings}>
           {slideImages.map((slideImage, index) => (
             <div key={index} className={`w-full h-[460px] rounded-[12px] overflow-hidden relative`}>

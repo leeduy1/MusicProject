@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import BreadcrumbIcon from '~/assets/Icons/BreadcrumbIcon'
 import ProfileAvatar from '~/assets/Icons/ProfileAvatar'
 import SignoutIcon from '~/assets/Icons/SignoutIcon'
 import TabOne from '~/components/Profiles/TabOne'
 import TabThree from '~/components/Profiles/TabThree'
 import TabTwo from '~/components/Profiles/TabTwo'
 import TabFour from '~/components/Profiles/TabFour'
+import Tittle from '~/components/Titlle'
+import Breadcrumb from '~/components/BreadCrumb'
 
 function Profile() {
   //hooks useState, useEffect, ...
@@ -14,10 +15,6 @@ function Profile() {
   const onChangeTab = (tabNumber: number) => {
     setCurrentTab(tabNumber)
   }
-  useEffect(() => {
-    console.log(currentTab)
-  }, [currentTab])
-
   const handleChangeTab = () => {
     switch (currentTab) {
       case 1:
@@ -36,29 +33,11 @@ function Profile() {
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
       <div className='w-full'>
         {/* BreadCrumb */}
-        <div className='md: flex flex-wrap basic-full grow-0 shrink-0'>
-          <div className='max-w-full relative'>
-            <ul className='flex flex-row justify-start items-center flex-wrap max-w-full list-none'>
-              <li className="before:content-[''] flex left-full h-[34px] items-center justify-center text-sm cursor-default">
-                <Link
-                  className='duration-[0.5s] ease-out cursor-pointer opacity-75 hover:text-green-700 hover:ease-in '
-                  to='/'
-                >
-                  Home
-                </Link>{' '}
-                <BreadcrumbIcon className='w-[20px] opacity-75' /> <p className='opacity-75'>Profile</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Breadcrumb name='Profile' />
         {/* EndBreadCrumb */}
         {/* Tiltle */}
         <div className='flex flex-wrap mx-[-15] mt-[50px] basic-full grow-0'>
-          <div className='mb-0 flex flex-row justify-between items-end flex-wrap '>
-            <h1 className='md:text-[36px] flex flex-row justify-start items-start font-sans font-normal text-[30px] cursor-default'>
-              Profile
-            </h1>
-          </div>
+          <Tittle nameTittle={'Profile'} />
         </div>
         {/* EndTittle */}
       </div>
