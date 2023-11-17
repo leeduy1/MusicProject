@@ -1,3 +1,4 @@
+import Article from '~/pages/Article'
 import Artists from '~/pages/Artists'
 import Events from '~/pages/Events'
 import Home from '~/pages/Home'
@@ -19,7 +20,8 @@ const publicRoutes = [
   { path: '/events', component: Events },
   { path: '/podcasts', component: Podcasts },
   { path: '/store', component: Store },
-  { path: '/news', component: News }
+  { path: '/news', component: News },
+  { path: '/article', component: Article }
 ]
 
 export { publicRoutes }

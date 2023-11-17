@@ -97,7 +97,7 @@ function Sidebar() {
         { text: EPages.EVENTS, url: '/events' },
         { text: EPages.RELEASES, url: '/releases' },
         { text: EPages.PRODUCT, url: '/' },
-        { text: EPages.ARTICLE, url: '/' },
+        { text: EPages.ARTICLE, url: '/article' },
         { text: EPages.CART, url: '/' },
         { text: EPages.PROFILE, url: '/profile' },
         { text: EPages.ABOUT, url: '/' },
