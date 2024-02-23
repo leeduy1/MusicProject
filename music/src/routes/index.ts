@@ -1,9 +1,13 @@
+import About from '~/pages/About'
 import Article from '~/pages/Article'
+import ArtistDetail from '~/pages/ArtistDetail'
 import Artists from '~/pages/Artists'
+import Cart from '~/pages/Cart'
 import Events from '~/pages/Events'
 import Home from '~/pages/Home'
 import News from '~/pages/News'
 import Podcasts from '~/pages/Podcasts'
+import Product from '~/pages/Product'
 import Profile from '~/pages/Profile'
 import Releases from '~/pages/Releases'
 import Signin from '~/pages/Signin'
@@ -21,7 +25,11 @@ const publicRoutes = [
   { path: '/podcasts', component: Podcasts },
   { path: '/store', component: Store },
   { path: '/news', component: News },
-  { path: '/article', component: Article }
+  { path: '/article', component: Article },
+  { path: '/product', component: Product },
+  { path: '/cart', component: Cart },
+  { path: '/about', component: About },
+  { path: '/artistdetail', component: ArtistDetail }
 ]
 
 export { publicRoutes }

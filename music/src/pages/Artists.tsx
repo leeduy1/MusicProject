@@ -102,41 +102,32 @@ function Artists() {
     'Indie',
     'Jazz',
     'Latino',
-    
+
     'R&B/Soul',
     'Rock'
   ]
   const artists: IArtists[] = [
     {
       name: 'Sơn Tùng',
-      url: 'https://volna.volkovdesign.com/img/artists/artist1.jpg'
+      url: '/Image/sontung.jpg'
     },
     {
       name: 'Jack',
-      url: 'https://volna.volkovdesign.com/img/artists/artist2.jpg'
+      url: '/Image/jack.jpg'
     },
-    { name: 'Tăng Duy Tân', url: 'https://volna.volkovdesign.com/img/artists/artist3.jpg' },
-    { name: 'Đức Phúc', url: 'https://volna.volkovdesign.com/img/artists/artist4.jpg' },
-    { name: 'Mỹ Tâm', url: 'https://volna.volkovdesign.com/img/artists/artist5.jpg' },
-    { name: 'Bùi Anh Tuấn', url: 'https://volna.volkovdesign.com/img/artists/artist6.jpg' }
-    // 'Sơn Tùng',
-    // 'Jack',
-    // 'Tăng Duy Tân',
-    // 'Đức Phúc',
-    // 'Mỹ Tâm',
-    // 'Hà Anh Tuấn',
-    // 'Bùi Anh Tuấn',
-    // 'Lệ Quên',
-    // 'Hòa Minzy',
-    // 'Hà An Huy',
-    // 'Mono',
-    // 'Erik',
-    // 'Quang Hà',
-    // 'Tuấn Hưng',
-    // 'Tăng Phúc',
-    // 'Cao Thái Sơn',
-    // 'Anh Tú',
-    // 'Quang Vinh'
+    { name: 'Tăng Duy Tân', url: '/Image/tangduytang.jpg' },
+    { name: 'Đức Phúc', url: '/Image/đức phúc.jpg' },
+    { name: 'Mỹ Tâm', url: '/Image/mytam.jpg' },
+    { name: 'Bùi Anh Tuấn', url: '/Image/buianhtuan.jpg' },
+    { name: 'Hà Anh Tuấn', url: '/Image/haanhtuan.jpg' },
+    { name: 'Lệ Quyên', url: '/Image/lequen.jpg' },
+    { name: 'Hòa Minzy', url: '/Image/hoaminzy.jpg' },
+    { name: 'Mono', url: '/Image/mono.jpg' },
+    { name: 'Erik', url: '/Image/erik.jpg' },
+    { name: 'Tuấn Hưng', url: '/Image/tuanhung.jpg' },
+    { name: 'Anh Tú', url: '/Image/anhtu.jpg' },
+    { name: 'Noo Phước Thịnh', url: '/Image/noophuocthinh.jpg' },
+    { name: 'Karik', url: '/Image/karrik.jpg' }
   ]
 
   const listArtistsMenus = ['All artists', 'Legacy artists', 'Active artists']
@@ -237,7 +228,7 @@ function Artists() {
                 <ul
                   ref={ulRef}
                   className={`bg-[#222227] left-[-15px] absolute py-[10px] max-h-[120px] overflow-hidden duration-500 ease-in-out rounded-2xl ${
-                    displaySelectArtistsMenu ? '' : 'hidden'
+                    displaySelectArtistsMenu ? 'block' : 'hidden'
                   }`}
                 >
                   {listArtistsMenus.map((artistsList) => {
@@ -322,8 +313,11 @@ function Artists() {
           {artists.map((artist) => {
             return (
               <div className='md:px-[15px] px-2.5 xl:basis-1/6 xl:max-w-[100/6] md:basis-1/4 md:max-w-[25%] basis-1/2 max-w-[50%]'>
-                <Link to='' className='flex flex-col justify-start items-start w-full mt-2.5 md:mt-[30px] group'>
-                  <div className='artist__cover flex flex-row justify-center items-center rounded-xl relative overflow-hidden w-full'>
+                <Link
+                  to='/artistdetail'
+                  className='flex flex-col justify-start items-start w-full mt-2.5 md:mt-[30px] group'
+                >
+                  <div className='artist__cover flex flex-row justify-center items-center rounded-xl relative overflow-hidden w-[200px] h-[180px]'>
                     <img className='w-full h-full block relative z-[1]' src={artist.url} alt={artist.name} />
                   </div>
                   <h3 className='z-[3] text-base mb-0 text-center w-full font-normal font-inter mt-2.5 group-hover:text-emerald duration-500 ease-in-out'>

@@ -173,7 +173,7 @@ function Releases() {
         {/* EndBreadCrumb */}
         {/* Tiltle */}
         <Tittle nameTittle={'Releases'} />
-        </div>
+      </div>
       {/* EndTittle */}
       {/* Release */}
       <div className='flex flex-wrap'>
@@ -305,7 +305,7 @@ function Releases() {
       </div>
       {/* endRelease */}
       {/* events */}
-      <EventPart/>
+      <EventPart />
       {/* endEvents */}
     </div>
   )

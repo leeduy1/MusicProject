@@ -109,7 +109,9 @@ function Sign_in() {
                     Sign up!
                   </Link>
                 </span>
-                <span className='mt-[15px] text-sm w-full text-center text-[#25a56a] hover:underline'>Forgot password?</span>
+                <span className='mt-[15px] text-sm w-full text-center text-[#25a56a] hover:underline'>
+                  Forgot password?
+                </span>
               </form>
             </div>
           </div>
