@@ -17,11 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.util.HashSet;
 
 @SpringBootApplication
-@OpenAPIDefinition(
-		info = @Info(
-				title = "Music application."
-		)
-)
+@OpenAPIDefinition(info = @Info(title = "Music application."))
 @EnableWebMvc
 @EnableWebSecurity
 @EnableJpaRepositories
@@ -39,19 +35,21 @@ public class MusicApplication {
 	@Bean
 	CommandLineRunner run(UserService userService) {
 		return args -> {
-//			userService.saveRole(new Role(null, "ROLE_USER"));
-//			userService.saveRole(new Role(null, "ROLE_MANAGER"));
-//			userService.saveRole(new Role(null, "ROLE_ADMIN"));
-//			userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
-//
-//			userService.saveUser(new User(null, "Long Thanh", "LongKame", "thanhlong@gmail.com", "123456", new HashSet<>()));
-//			userService.saveUser(new User(null, "Nam Thanh", "NamNunez", "namthanh@gmail.com", "123456", new HashSet<>()));
-//
-//			userService.addToUser("thanhlong@gmail.com", "ROLE_USER");
-//			userService.addToUser("thanhlong@gmail.com", "ROLE_MANAGER");
-//
-//			userService.addToUser("namthanh@gmail.com", "ROLE_ADMIN");
-//			userService.addToUser("namthanh@gmail.com", "ROLE_SUPER_ADMIN");
+			// userService.saveRole(new Role(null, "ROLE_USER"));
+			// userService.saveRole(new Role(null, "ROLE_MANAGER"));
+			// userService.saveRole(new Role(null, "ROLE_ADMIN"));
+			// userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
+			//
+			// userService.saveUser(new User(null, "Long Thanh", "LongKame",
+			// "thanhlong@gmail.com", "123456", new HashSet<>()));
+			// userService.saveUser(new User(null, "Nam Thanh", "NamNunez",
+			// "namthanh@gmail.com", "123456", new HashSet<>()));
+			//
+			// userService.addToUser("thanhlong@gmail.com", "ROLE_USER");
+			// userService.addToUser("thanhlong@gmail.com", "ROLE_MANAGER");
+			//
+			// userService.addToUser("namthanh@gmail.com", "ROLE_ADMIN");
+			// userService.addToUser("namthanh@gmail.com", "ROLE_SUPER_ADMIN");
 
 		};
 	}

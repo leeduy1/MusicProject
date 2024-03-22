@@ -14,6 +14,7 @@ import Logo from '../Logo'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+  
   const notificationData = [
     {
       icon: <SuccessIcon className='w-4 h-auto' fill='#25a56a' />,
@@ -63,10 +64,10 @@ function Navbar() {
             <Link to='/profile'>Profile</Link>
           </li>
           <li className='text-[16px] font-inter text-grey-C0 font-[400] hover:text-[#25a56a] ease-in-out duration-[0.5s]'>
-            <a href='/'>About</a>
+            <Link to='/about'>About</Link>
           </li>
           <li className='text-[16px] font-inter text-grey-C0 font-[400] hover:text-[#25a56a] ease-in-out duration-[0.5s]'>
-            <a href='/'>Contacts</a>
+            <Link to='/contact'>Contacts</Link>
           </li>
         </ul>
         <div className='w-[320px] h-10 flex relative items-center'>

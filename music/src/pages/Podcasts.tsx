@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { BiSolidDownArrow } from 'react-icons/bi'
-import { BsPlay } from 'react-icons/bs'
 import { FiSearch } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
 import Breadcrumb from '~/components/BreadCrumb'
 import EventPart from '~/components/Event'
+import Podcast from '~/components/Podcast'
 import Tittle from '~/components/Titlle'
 
 interface IPodcast {
@@ -201,30 +200,7 @@ function Podcasts() {
         {podcastList.map((option) => {
           return (
             <div className='md:px-[15px] px-2.5 lg:basis-1/3 lg:max-w-[33.3333333%] sm:basis-1/2 sm:max-w-[50%] basis-full max-w-full'>
-              <div className='md:mt-[30px] flex flex-row justify-start items-start flex-wrap mt-5 relative overflow-hidden group '>
-                <Link
-                  className='w-full rounded-xl overflow-hidden relative flex flex-row justify-center items-center live__cover'
-                  to={option.url}
-                >
-                  <img src={option.img} alt='' />
-                </Link>
-                <span
-                  className={`absolute top-3 left-5 bg-[#eb5757] px-2 items-center z-[3] cursor-default w-auto h-[24px] rounded-lg uppercase text-xs 
-                  ${option.state ? `flex` : `hidden`}`}
-                >
-                  live
-                </span>
-                <BsPlay
-                  className='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 scale-0 ease-in-out duration-300 group-hover:scale-[1]'
-                  size='60px'
-                />
-                <h3 className='text-base font-inter group-hover:text-emerald duration-500 ease-in-out pt-2 font-medium'>
-                  <Link to={option.url}>{option.name}</Link>
-                </h3>
-                <span className='absolute top-[70%] left-[5%] bg-[#222227] px-2 rounded-md z-[3] py-1'>
-                  {option.viewers}
-                </span>
-              </div>
+              <Podcast state={false} url={option.url} viewers={option.viewers} img={option.img} name={option.name} />
             </div>
           )
         })}

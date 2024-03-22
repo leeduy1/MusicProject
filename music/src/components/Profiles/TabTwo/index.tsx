@@ -119,7 +119,7 @@ function TabTwo() {
                         </td>
                         <td>
                           <div className='pt-[15px] pr-5 pb-[15px] pl-0 flex flex-row justify-start items-center text-sm text-[#25a56a] font-normal'>
-                            <DeliveryIcons className='w-[18px] h-auto mr-[5px]'/> 
+                            <DeliveryIcons className='w-[18px] h-auto mr-[5px]' />
                             Delivered
                           </div>
                         </td>
@@ -171,7 +171,7 @@ function TabTwo() {
                         </td>
                         <td>
                           <div className='pt-[15px] pr-5 pb-[15px] pl-0 flex flex-row justify-start items-center text-sm text-[#eb5757] font-normal'>
-                            <CanceledIcon className='w-[18px] h-auto mr-[5px]'/> 
+                            <CanceledIcon className='w-[18px] h-auto mr-[5px]' />
                             Canceled
                           </div>
                         </td>
@@ -223,7 +223,7 @@ function TabTwo() {
                         </td>
                         <td>
                           <div className='pt-[15px] pr-5 pb-[15px] pl-0 flex flex-row justify-start items-center text-sm text-[#c0c0c0] font-normal'>
-                            <OnthewayIcon className='w-[18px] h-auto mr-[5px]'/> 
+                            <OnthewayIcon className='w-[18px] h-auto mr-[5px]' />
                             On the way
                           </div>
                         </td>
@@ -275,7 +275,7 @@ function TabTwo() {
                         </td>
                         <td>
                           <div className='pt-[15px] pr-5 pb-[15px] pl-0 flex flex-row justify-start items-center text-sm text-[#25a56a] font-normal'>
-                            <DeliveryIcons className='w-[18px] h-auto mr-[5px]'/> 
+                            <DeliveryIcons className='w-[18px] h-auto mr-[5px]' />
                             Delivered
                           </div>
                         </td>
