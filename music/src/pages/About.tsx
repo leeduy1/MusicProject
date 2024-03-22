@@ -9,6 +9,7 @@ import MinuteListenedIcon from '~/assets/Icons/MinutesListenedIcon'
 import NewIcon1 from '~/assets/Icons/NewIcon1'
 import PremiunPlanIcon from '~/assets/Icons/PremiumPlanIcon'
 import Breadcrumb from '~/components/BreadCrumb'
+import Features from '~/components/Features/Features'
 import TabThree from '~/components/Profiles/TabThree'
 import Tittle from '~/components/Titlle'
 
@@ -18,11 +19,12 @@ interface IContainer {
   Information: string
 }
 
-// interface Ifeature {
-//   icon: string
-//   name: string
-//   information: string
-// }
+interface Ifeature {
+  icon: JSX.Element
+  name: string
+  information: string
+  colorBg: string
+}
 
 function About() {
   const container: IContainer[] = [
@@ -46,53 +48,62 @@ function About() {
     }
   ]
 
-  // const features: Ifeature[] = [
-  //   {
-  //     icon: '<FeatureIcon1 />',
-  //     name: 'Instant conclusion',
-  //     information:
-  //       'It to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining'
-  //   },
-  //   {
-  //     icon: '<PremiunPlanIcon />',
-  //     name: 'Choose your plan',
-  //     information:
-  //       'If you are goin to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text'
-  //   },
-  //   {
-  //     icon: '<FeatureIcon2 />',
-  //     name: 'Create an account',
-  //     information:
-  //       'It has survived not only five centuries, but also the leap into electronic typesetting,remaining essentially'
-  //   },
-  //   {
-  //     icon: '<NewIcon1 />',
-  //     name: 'Enjoy blast music',
-  //     information: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose'
-  //   },
-  //   {
-  //     icon: '<FeatureIcon3 />',
-  //     name: 'Choose your plan',
-  //     information:
-  //       'It to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining'
-  //   },
-  //   {
-  //     icon: '<FeatureIcon4 />',
-  //     name: 'No contracts, no risk',
-  //     information: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose'
-  //   },
-  //   {
-  //     icon: '<MinuteListenedIcon />',
-  //     name: 'Valid shares only',
-  //     information: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose'
-  //   },
-  //   {
-  //     icon: '<FeatureIcon5 />',
-  //     name: 'Choose your plan',
-  //     information:
-  //       'If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text'
-  //   }
-  // ]
+  const features: Ifeature[] = [
+    {
+      icon: <FeatureIcon1 className='fill-[#2f80ed]' />,
+      name: 'Instant conclusion',
+      information:
+        'It to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining',
+
+      colorBg: 'rgba(47,128,237,0.15)'
+    },
+    {
+      icon: <PremiunPlanIcon className='fill-[#eb5757]' />,
+      name: 'Choose your plan',
+      information:
+        'If you are goin to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text',
+      colorBg: 'rgba(235,87,87,0.15)'
+    },
+    {
+      icon: <FeatureIcon2 className='fill-[#8051d4]' />,
+      name: 'Create an account',
+      information:
+        'It has survived not only five centuries, but also the leap into electronic typesetting,remaining essentially',
+      colorBg: 'rgba(128,81,212,0.15)'
+    },
+    {
+      icon: <NewIcon1 className='fill-emerald' />,
+      name: 'Enjoy blast music',
+      information: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose',
+      colorBg: 'rgba(37,165,106,0.15)'
+    },
+    {
+      icon: <FeatureIcon3 className='fill-emerald' />,
+      name: 'Choose your plan',
+      information:
+        'It to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining',
+      colorBg: 'rgba(37,165,106,0.15)'
+    },
+    {
+      icon: <FeatureIcon4 className='fill-emerald' />,
+      name: 'No contracts, no risk',
+      information: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose',
+      colorBg: 'rgba(37,165,106,0.15)'
+    },
+    {
+      icon: <MinuteListenedIcon className='fill-emerald' />,
+      name: 'Valid shares only',
+      information: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose',
+      colorBg: 'rgba(37,165,106,0.15)'
+    },
+    {
+      icon: <FeatureIcon5 className='fill-emerald' />,
+      name: 'Choose your plan',
+      information:
+        'If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text',
+      colorBg: 'rgba(37,165,106,0.15)'
+    }
+  ]
   return (
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative '>
       <Breadcrumb name={'About'} />
@@ -119,7 +130,9 @@ function About() {
           return (
             <div className='border border-solid border-[#333333] basis-full max-w-full md:basis-1/3 md:max-w-[30%] relative p-4 rounded-xl'>
               <div className='flex flex-row gap-3 mb-5'>
-                <span className='bg-[rgba(37,165,106,0.15)] text-emerald w-12 h-12 text-xl font-semibold rounded-md flex justify-center items-center'>
+                <span
+                  className={`bg-[rgba(37,165,106,0.15)] text-emerald w-12 h-12 text-xl font-semibold rounded-md flex justify-center items-center`}
+                >
                   {key.Number}
                 </span>
                 <span className='flex justify-center items-center text-lg font-base'>{key.Name}</span>
@@ -148,169 +161,10 @@ function About() {
           on purpose (injected humour and the like).
         </span>
       </div>
-      <div className='mt-5 flex flex-wrap flex-row gap-6'>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(47,128,237,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <FeatureIcon1 className='fill-[#2f80ed]' />
-              {/* <FeatureIcon2 />
-                  <FeatureIcon3 />
-                  <FeatureIcon4 />
-                  <FeatureIcon5 />
-                  <NewIcon1 />
-                  <MinuteListenedIcon />
-                  <PremiunPlanIcon /> */}
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>Instant conclusion</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              It to make a type specimen book. It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining
-            </span>
-          </div>
-        </div>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(235,87,87,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <PremiunPlanIcon className='fill-[#eb5757]' />
-              {/* < />
-                  <FeatureIcon3 />
-                  <FeatureIcon4 />
-                  <FeatureIcon5 />
-                  <NewIcon1 />
-                  <MinuteListenedIcon />
-                  <PremiunPlanIcon /> */}
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>Choose your plan</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing
-              hidden in the middle of text
-            </span>
-          </div>
-        </div>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(128,81,212,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <FeatureIcon2 className='fill-[#8051d4]' />
-              {/* <FeatureIcon2 />
-                  <FeatureIcon3 />
-                  <FeatureIcon4 />
-                  <FeatureIcon5 />
-                  <NewIcon1 />
-                  <MinuteListenedIcon />
-                  <PremiunPlanIcon /> */}
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>Create an account</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-              essentially
-            </span>
-          </div>
-        </div>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(37,165,106,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <NewIcon1 className='' />
-              {/* <FeatureIcon2 />
-                  <FeatureIcon3 />
-                  <FeatureIcon4 />
-                  <FeatureIcon5 />
-                  <NewIcon1 />
-                  <MinuteListenedIcon />
-                  <PremiunPlanIcon /> */}
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>Enjoy Blast music</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              Various versions have evolved over the years,sometimes by accident,sometimes on purpose
-            </span>
-          </div>
-        </div>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(37,165,106,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <FeatureIcon3 className='fill-emerald' />
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>Choose your plan</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              It has survived not only five centuries,but also the leap into electronic typesetting,remaining
-              essentially
-            </span>
-          </div>
-        </div>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(37,165,106,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <FeatureIcon4 className='fill-emerald' />
-              {/* <FeatureIcon2 />
-                  <FeatureIcon3 />
-                  <FeatureIcon4 />
-                  <FeatureIcon5 />
-                  <NewIcon1 />
-                  <MinuteListenedIcon />
-                  <PremiunPlanIcon /> */}
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>No contracts, no risk</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              Various versions have evolved over the years,sometimes by accident,sometimes on purpose
-            </span>
-          </div>
-        </div>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(37,165,106,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <MinuteListenedIcon className='fill-emerald' />
-              {/* <FeatureIcon2 />
-                  <FeatureIcon3 />
-                  <FeatureIcon4 />
-                  <FeatureIcon5 />
-                  <NewIcon1 />
-                  <MinuteListenedIcon />
-                  <PremiunPlanIcon /> */}
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>Valid shares only</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              Various versions have evolved over the years,sometimes by accident,sometimes on purpose
-            </span>
-          </div>
-        </div>
-        <div className='flex basis-1/4 relative flex-col max-w-[23%]'>
-          <div className='flex flex-row mb-3'>
-            <div className='h-12 bg-[rgba(37,165,106,0.15)] w-12 rounded-xl flex flex-row mr-3 p-3'>
-              <FeatureIcon5 className='fill-emerald' />
-              {/* <FeatureIcon2 />
-                  <FeatureIcon3 />
-                  <FeatureIcon4 />
-                  <FeatureIcon5 />
-                  <NewIcon1 />
-                  <MinuteListenedIcon />
-                  <PremiunPlanIcon /> */}
-            </div>
-            <div className='flex justify-center items-center text-base font-normal'>Instant conclusion</div>
-          </div>
-          <div>
-            <span className='text-[#c0c0c0]'>
-              If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing
-              hidden in the middle of text
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='mt-4'>
+      <Features features={features} />
+      <div className='mt-10'>
         <div className='w-full'>
-          <h1 className='text-3xl mb-2'>Select Your Plan</h1>
+          <h1 className='text-3xl mb-2 '>Select Your Plan</h1>
           <span className='text-[#c0c0c0]'>No hidden fees,equipment rentals,or installation appointments.</span>
         </div>
         <div className='w-full'>

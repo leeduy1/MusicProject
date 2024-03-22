@@ -5,5 +5,5 @@ import com.ldteam.music.entities.User;
 
 public interface UserService {
     User saveUser(User user);
-
+    
 }

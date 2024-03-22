@@ -176,7 +176,7 @@ function Releases() {
       </div>
       {/* EndTittle */}
       {/* Release */}
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap w-full'>
         <div className='main_filter sm:before:right-[-30px] sm:before:left-[-30px] md:p-0 md:flex-row  md:items-center md:mt-[30px] md:h-[70px] flex flex-col justify-start items-start w-full mt-5 pb-5 pt-5 relative'>
           <form
             action=''
@@ -286,7 +286,7 @@ function Releases() {
             </div>
           </div>
         </div>
-        <div className='flex flex-row mb-5 gap-5 flex-wrap'>
+        <div className='flex mb-5 flex-wrap w-full'>
           {List.map((choose) => {
             return (
               <ReleaseCard

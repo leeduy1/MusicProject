@@ -3,10 +3,14 @@ import Article from '~/pages/Article'
 import ArtistDetail from '~/pages/ArtistDetail'
 import Artists from '~/pages/Artists'
 import Cart from '~/pages/Cart'
+import Contact from '~/pages/Contact'
 import Events from '~/pages/Events'
+import ForgotPassWord from '~/pages/ForgotPassWord'
 import Home from '~/pages/Home'
 import News from '~/pages/News'
 import Podcasts from '~/pages/Podcasts'
+import PricingPlan from '~/pages/PricingPlan'
+import PrivacyPolicy from '~/pages/PrivacyPolicy'
 import Product from '~/pages/Product'
 import Profile from '~/pages/Profile'
 import Releases from '~/pages/Releases'
@@ -29,7 +33,11 @@ const publicRoutes = [
   { path: '/product', component: Product },
   { path: '/cart', component: Cart },
   { path: '/about', component: About },
-  { path: '/artistdetail', component: ArtistDetail }
+  { path: '/artistdetail', component: ArtistDetail },
+  { path: '/contact', component: Contact },
+  { path: '/pricingplans', component: PricingPlan },
+  { path: '/privacypolicy', component: PrivacyPolicy },
+  { path: '/forgotpass', component: ForgotPassWord }
 ]
 
 export { publicRoutes }

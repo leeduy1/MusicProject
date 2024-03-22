@@ -3,6 +3,7 @@ import { BiSolidDownArrow } from 'react-icons/bi'
 import { FiArrowRight, FiSearch } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
+import Artist from '~/components/Artist'
 import Breadcrumb from '~/components/BreadCrumb'
 import ReleaseCardSlide from '~/components/ReleaseCardSlide'
 import { SlideArrowNext, SlideArrowPrev } from '~/components/SlideArrow'
@@ -309,21 +310,11 @@ function Artists() {
             </div>
           </div>
         </div>
-        <div className='mx-[-15px] flex flex-wrap mt-2'>
+        <div className='flex flex-wrap mt-2 w-full gap-[9px]'>
           {artists.map((artist) => {
             return (
-              <div className='md:px-[15px] px-2.5 xl:basis-1/6 xl:max-w-[100/6] md:basis-1/4 md:max-w-[25%] basis-1/2 max-w-[50%]'>
-                <Link
-                  to='/artistdetail'
-                  className='flex flex-col justify-start items-start w-full mt-2.5 md:mt-[30px] group'
-                >
-                  <div className='artist__cover flex flex-row justify-center items-center rounded-xl relative overflow-hidden w-[200px] h-[180px]'>
-                    <img className='w-full h-full block relative z-[1]' src={artist.url} alt={artist.name} />
-                  </div>
-                  <h3 className='z-[3] text-base mb-0 text-center w-full font-normal font-inter mt-2.5 group-hover:text-emerald duration-500 ease-in-out'>
-                    {artist.name}
-                  </h3>
-                </Link>
+              <div className='flex xl:basis-1/6 md:basis-1/4 sm:basis-1/3 basis-1/2 xl:max-w-[16%] md:max-w-[25%] sm:max-w-[33%] max-w-[50%]'>
+                <Artist name={artist.name} url={artist.url} />
               </div>
             )
           })}

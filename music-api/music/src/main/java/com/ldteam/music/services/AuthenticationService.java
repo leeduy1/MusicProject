@@ -11,11 +11,15 @@ import com.ldteam.music.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -27,23 +31,20 @@ public class AuthenticationService {
     private final UserService userService;
     private final RoleService roleService;
 
-
-    public AuthenticationResponse authenticaticate(AuthenticationRequest authenticationRequest) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword()));
-        User user = userRepository.findByEmail(authenticationRequest.getEmail()).orElseThrow();
-        List<Role> role = null;
-        if(user != null) {
-            role = roleCustomRepo.getRole(user);
-        }
-
+    public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) {
+        authenticationManager.authenticate(new
+        UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(),
+        authenticationRequest.getPassword()));
+        User user = userRepository.findByEmail(authenticationRequest.getEmail())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        List<Role> roles = roleCustomRepo.getRole(user);
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        Set<Role> set = new HashSet<>();
-        role.stream().forEach(c -> set.add(new Role(c.getName())));
-        user.setRoles(set);
-        set.stream().forEach(i -> authorities.add(new SimpleGrantedAuthority(i.getName())));
-        var jwtAccessToken = jwtService.generateAccessToken(user, authorities);
-        var jwtRefreshToken = jwtService.generateRefreshToken(user, authorities);
-        return AuthenticationResponse.builder().accessToken(jwtAccessToken).refreshToken(jwtRefreshToken).build();
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
+        String accessToken = jwtService.generateAccessToken(user, authorities);
+        String refreshToken = jwtService.generateRefreshToken(user, authorities);
+        return new AuthenticationResponse(accessToken, refreshToken);
     }
 
     public RegistrationResponse registerUser(RegistrationRequest registrationRequest) {
@@ -52,13 +53,10 @@ public class AuthenticationService {
             return new RegistrationResponse("Email already exists");
         }
         User user = new User();
-        Role role = roleService.create("ROLE_USER");
-        Set<Role> roles = new HashSet<>();
-        roles.add(role);
-        user.setUser_name(registrationRequest.getUser_name());
         user.setEmail(registrationRequest.getEmail());
         user.setPassword(registrationRequest.getPassword());
-        user.setRoles(roles);
+        Role role = roleService.create("ROLE_USER");
+        user.setRoles(Set.of(role));
         userService.saveUser(user);
         return new RegistrationResponse("Registration successful");
     }

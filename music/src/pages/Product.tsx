@@ -20,7 +20,7 @@ interface IElement {
 function Product() {
   const settings = {
     customPaging: function () {
-      return <div className={`dot w-[10px] h-1 bg-white bg-opacity-[0.6] duration-500`}></div>
+      return <div className={`dot w-[10px] h-1 bg-white bg-opacity-[0.6] duration-500 `}></div>
     },
     dots: false,
     infinite: true,
@@ -173,11 +173,11 @@ function Product() {
                 <FiArrowRight className='ml-1 group-hover:text-emerald duration-100 w-[22px] h-auto ease-in-out' />
               </Link>
             </div>
-            <div className='slide-container block'>
-              <Slider {...settings}>
+            <div className='slide-container block '>
+              <Slider className='h-96' {...settings}>
                 {elements.map((element) => {
                   return (
-                    <div className=' pr-5'>
+                    <div className='pr-5'>
                       <div className='md:mt-[30px] relative mt-5 rounded-xl bg-[#212529] w-full overflow-hidden flex flex-col justify-start items-start p-5'>
                         <div className='product w-full relative rounded-xl overflow-hidden select-none group'>
                           <img src={element.url} alt='' className='w-full relative block z-[1]' />

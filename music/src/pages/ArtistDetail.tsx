@@ -4,6 +4,8 @@ import Facebookicon1 from '~/assets/Icons/Facebookicon1'
 import Twittericon1 from '~/assets/Icons/Twittericon1'
 import VkIcon from '~/assets/Icons/VkIcon'
 import Podcast from '~/components/Podcast'
+import ReleaseCard from '~/components/ReleaseCard'
+import ReleaseCardSlide from '~/components/ReleaseCardSlide'
 import SlideArrowNext from '~/components/SlideArrow/SlideArrowNext'
 import SlideArrowPrev from '~/components/SlideArrow/SlideArrowPrev'
 
@@ -14,8 +16,172 @@ interface IPodcast {
   img: string
   name: string
 }
+interface ISlide {
+  url: string
+  caption: string
+  date: string
+  time: string
+  name: string
+  address: string
+  state: boolean
+}
 
 function ArtistDetail() {
+  const settings1 = {
+    customPaging: function () {
+      return <div className={`dot w-[10px] h-1 bg-white bg-opacity-[0.6] duration-500`}></div>
+    },
+    dots: false,
+    infinite: true,
+    speed: 400,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <SlideArrowNext />,
+    prevArrow: <SlideArrowPrev />
+  }
+
+  const slide: ISlide[] = [
+    {
+      url: 'https://volna.volkovdesign.com/img/events/event1.jpg',
+      caption: 'Slide 1',
+      date: 'March 14, 2021',
+      time: '8:00 pm',
+      name: 'Sorry Babushka',
+      address: '1 East Plumb Branch St.Saint Petersburg, FL 33702',
+      state: true
+    },
+    {
+      url: 'https://volna.volkovdesign.com/img/events/event2.jpg',
+      caption: 'Slide 2',
+      date: 'March 16, 2021',
+      time: '7:00 pm',
+      name: 'Big Daddy',
+      address: '71 Pilgrim Avenue Chevy Chase, MD 20815',
+      state: true
+    },
+    {
+      url: 'https://volna.volkovdesign.com/img/events/event3.jpg',
+      caption: 'Slide 3',
+      date: 'March 23, 2021',
+      time: '9:30 pm',
+      name: 'Rocky Pub',
+      address: '514 S. Magnolia St. Orlando, FL 32806',
+      state: false
+    },
+    {
+      url: 'https://volna.volkovdesign.com/img/events/event4.jpg',
+      caption: 'Slide 4',
+      date: 'March 30, 2021',
+      time: '6:00 pm',
+      name: 'Big Club',
+      address: '123 6th St. Melbourne, FL 32904',
+      state: true
+    },
+    {
+      url: 'https://volna.volkovdesign.com/img/events/event5.jpg',
+      caption: 'Slide 5',
+      date: 'March 30, 2021',
+      time: '10:00 pm',
+      name: 'Big Daddy',
+      address: '71 Pilgrim Avenue Chevy Chase, MD 20815',
+      state: true
+    },
+    {
+      url: 'https://volna.volkovdesign.com/img/events/event6.jpg',
+      caption: 'Slide 6',
+      date: 'March 31, 2021',
+      time: '6:30 pm',
+      name: 'Rocky Pub',
+      address: '514 S. Magnolia St. Orlando, FL 32806',
+      state: false
+    }
+  ]
+  const List = [
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover1.jpg',
+      videoAmount: '22',
+      listenerAmount: '19503',
+      artistName: 'Space Melody',
+      creator: ['VIZE', 'Alan Walker', 'Lean']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover2.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover3.jpg',
+      videoAmount: '16',
+      listenerAmount: '300000',
+      artistName: 'I Love My Country',
+      creator: ['Florida Georgia']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover4.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover5.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover6.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover7.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover8.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover9.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover10.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover11.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    },
+    {
+      url: 'http://volna.volkovdesign.com/img/covers/cover12.jpg',
+      videoAmount: '7',
+      listenerAmount: '4731',
+      artistName: 'Said Sum',
+      creator: ['MoneyBagg']
+    }
+  ]
   const podcastList: IPodcast[] = [
     {
       state: true,
@@ -156,15 +322,54 @@ function ArtistDetail() {
         </div>
         <div className='w-full'>
           <div className='slide-container block'>
-            <Slider {...settings}>
+            <Slider {...settings} className='pb-16'>
               {podcastList.map((choose) => (
-                <div className='pr-2'>
+                <div className='pr-3'>
                   <Podcast
                     state={false}
                     url={choose.url}
                     viewers={choose.viewers}
                     img={choose.img}
                     name={choose.name}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h1 className='text-3xl font-inter font-medium'>Release</h1>
+          </div>
+          <div className='flex flex-row justify-center flex-wrap'>
+            {List.map((choose) => {
+              return (
+                <ReleaseCard
+                  thumbnail={choose.url}
+                  numbersOfVideo={choose.videoAmount}
+                  numbersOfListener={choose.listenerAmount}
+                  name={choose.artistName}
+                  authors={choose.creator}
+                />
+              )
+            })}
+          </div>
+        </div>
+        <div className='w-full'>
+          <div className='mb-10'>
+            <h1 className='text-3xl font-inter font-medium'>Events</h1>
+          </div>
+          <div className=''>
+            <Slider {...settings1} className='pb-20'>
+              {slide.map((slideImage) => (
+                <div className='pr-5'>
+                  <ReleaseCardSlide
+                    url={slideImage.url}
+                    date={slideImage.date}
+                    time={slideImage.time}
+                    name={slideImage.name}
+                    address={slideImage.address}
+                    state={slideImage.state}
                   />
                 </div>
               ))}

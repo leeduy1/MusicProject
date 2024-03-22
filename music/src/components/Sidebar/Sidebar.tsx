@@ -101,12 +101,12 @@ function Sidebar() {
         { text: EPages.CART, url: '/cart' },
         { text: EPages.PROFILE, url: '/profile' },
         { text: EPages.ABOUT, url: '/about' },
-        { text: EPages.CONTACTS, url: '/' },
-        { text: EPages.PRICING_PLANS, url: '/' },
-        { text: EPages.PRIVACY_POLICY, url: '/' },
+        { text: EPages.CONTACTS, url: '/contact' },
+        { text: EPages.PRICING_PLANS, url: '/pricingplans' },
+        { text: EPages.PRIVACY_POLICY, url: '/privacypolicy' },
         { text: EPages.SIGN_IN, url: '/signin' },
         { text: EPages.SIGN_UP, url: '/signup' },
-        { text: EPages.FORGOT_PASSWORD, url: '/' },
+        { text: EPages.FORGOT_PASSWORD, url: '/forgotpass' },
         { text: EPages.PAGE_404, url: '/' }
       ]
     },
