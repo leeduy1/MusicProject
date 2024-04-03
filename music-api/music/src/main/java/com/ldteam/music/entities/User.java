@@ -24,10 +24,7 @@ public class User implements UserDetails {
     private String password;
 
     @ManyToMany
-    @JoinTable(name="users_role",
-            joinColumns = @JoinColumn(name = "users_id"),
-            inverseJoinColumns = @JoinColumn(name = "roles_id")
-    )
+    @JoinTable(name = "users_role", joinColumns = @JoinColumn(name = "users_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
     private Set<Role> roles = new HashSet<>();
 
     public User(Long id, String user_name, String full_name, String email, String password, Set<Role> roles) {
@@ -46,9 +43,13 @@ public class User implements UserDetails {
         return List.of(new SimpleGrantedAuthority(authorities.toString()));
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String getUsername() {
-        return email;
+        return user_name;
     }
 
     @Override
@@ -56,6 +57,9 @@ public class User implements UserDetails {
         return password;
     }
 
+    public Long getId() {
+        return id;
+    }
 
     @Override
     public boolean isAccountNonExpired() {

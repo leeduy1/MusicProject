@@ -32,9 +32,8 @@ public class AuthenticationService {
     private final RoleService roleService;
 
     public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) {
-        authenticationManager.authenticate(new
-        UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(),
-        authenticationRequest.getPassword()));
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(),
+                authenticationRequest.getPassword()));
         User user = userRepository.findByEmail(authenticationRequest.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         List<Role> roles = roleCustomRepo.getRole(user);
@@ -42,14 +41,16 @@ public class AuthenticationService {
         for (Role role : roles) {
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
+
         String accessToken = jwtService.generateAccessToken(user, authorities);
         String refreshToken = jwtService.generateRefreshToken(user, authorities);
+
         return new AuthenticationResponse(accessToken, refreshToken);
     }
 
     public RegistrationResponse registerUser(RegistrationRequest registrationRequest) {
         Optional<User> existingUser = userRepository.findByEmail(registrationRequest.getEmail());
-        if (existingUser.isPresent()) {
+        if (existingUser != null) {
             return new RegistrationResponse("Email already exists");
         }
         User user = new User();

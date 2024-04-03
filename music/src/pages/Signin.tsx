@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from './AuthProvider'
 import axios from 'axios'
 import Facebookicon1 from '~/assets/Icons/Facebookicon1'
 import GoogleIcon from '~/assets/Icons/GoogleIcon'
 import Twittericon1 from '~/assets/Icons/Twittericon1'
 import Logo from '~/components/Logo'
 import Breadcrumb from '~/components/BreadCrumb'
+import Cookies from 'js-cookie'
+// import decodeToken from '~/components/JWT/decodeToken'
 
 function Sign_in() {
   const [currentCheck, setCurrentCheck] = useState(true)
@@ -13,6 +16,10 @@ function Sign_in() {
   const [isLoading, setIsLoading] = useState(false)
   const [currentEmail, setCurrentEmail] = useState('')
   const [currentPass, setCurrentPass] = useState('')
+  // const [tokenSaved, setTokenSaved] = useState('')
+  const { updateAuthInfo } = useAuth()
+
+  // const { updateAuthInfo } = useAuth()
 
   const handleCheckboxChange = () => {
     setCurrentCheck(!currentCheck)
@@ -23,17 +30,45 @@ function Sign_in() {
   const handlePassChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentPass(e.target.value)
   }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
     setError('')
     try {
-      await axios.post('http://localhost:8080/api/v1/auth/login', {
+      const response = await axios.post('http://localhost:8080/api/v1/auth/login', {
         email: currentEmail,
         password: currentPass
       })
+
+      // Lấy token từ phản hồi của API
+      const token = response.data.accessToken
+
+      // Đặt token vào trạng thái của ứng dụng hoặc lưu vào Cookie
+      // setTokenSaved(token)
+      Cookies.set('token', token)
+      // Gọi API để lấy thông tin người dùng sau khi đăng nhập
+      const profileResponse = await axios.get('http://localhost:8080/api/v1/profile', {
+        headers: {
+          Authorization: `Bearer ${token}` // Đính kèm token vào tiêu đề Authorization
+        }
+      })
+
+      // Xử lý phản hồi từ API trả về thông tin người dùng
+      const userProfile = profileResponse.data
+      const authInfo = {
+        id: userProfile.id,
+        username: userProfile.user_name,
+        fullName: userProfile.full_name,
+        email: userProfile.email
+      }
+      updateAuthInfo(authInfo)
+      // console.log(authInfo)
+      // console.log('User profile:', userProfile)
+      // Chuyển hướng hoặc thực hiện các hành động khác sau khi đăng nhập thành công
+      alert('Đăng nhập thành công')
     } catch (error) {
-      setError('Invalid email or password. Please try again.')
+      setError('Invalid email or password. Please try again.' + error)
     } finally {
       setIsLoading(false)
     }

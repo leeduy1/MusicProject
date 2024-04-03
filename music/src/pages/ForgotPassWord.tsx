@@ -2,13 +2,42 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Breadcrumb from '~/components/BreadCrumb'
 import Logo from '~/components/Logo'
+// import jwt from 'jsonwebtoken'
 
 function ForgotPassWord() {
   const [currentCheck, setCurrentCheck] = useState(true)
   const handleCheckboxChange = () => {
     setCurrentCheck(!currentCheck)
   }
+  // Giải mã token và lấy thông tin
+  // function decodeToken(token: string, secretKey: string): TokenPayload | null {
+  //   try {
+  //     const decoded = jwt.verify(token, secretKey) as TokenPayload
+  //     return decoded
+  //   } catch (error) {
+  //     console.error('Error decoding token:', error)
+  //     return null
+  //   }
+  // }
 
+  // Sử dụng hàm để giải mã token và lấy thông tin
+  // const token = Cookies.get('token')
+  // if (token) {
+  //   const secretKey = '123'
+  //   const decodedToken = decodeToken(token, secretKey)
+
+  //   if (decodedToken) {
+  //     console.log('Decoded token:', decodedToken)
+  //     console.log('User ID:', decodedToken.userId)
+  //     console.log('Username:', decodedToken.username)
+  //     console.log('FullName:', decodedToken.fullName)
+  //     // Lấy các thông tin khác từ decodedToken
+  //   } else {
+  //     console.log('Failed to decode token')
+  //   }
+  // } else {
+  //   console.log('Token is undefined')
+  // }
   return (
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
       <Breadcrumb name={'Restore password'} />

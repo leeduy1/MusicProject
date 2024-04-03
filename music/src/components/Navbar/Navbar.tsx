@@ -2,7 +2,7 @@ import { FiSearch } from 'react-icons/fi'
 import { FaBars } from 'react-icons/fa'
 import { MdNotifications } from 'react-icons/md'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { HiOutlineLogin } from 'react-icons/hi'
+import { HiOutlineLogin, HiOutlineLogout } from 'react-icons/hi'
 import SuccessIcon from '~/assets/Icons/SuccessIcon'
 import FailedIcon from '~/assets/Icons/FailedIcon'
 import InformationIcon from '~/assets/Icons/InformationIcon'
@@ -12,9 +12,12 @@ import NotificationItem from '../NotificationItem'
 import CartItem from '../CartItem'
 import Logo from '../Logo'
 import { Link } from 'react-router-dom'
+import { useAuth } from '~/pages/AuthProvider'
 
 function Navbar() {
-  
+  const { authInfo } = useAuth()
+  const isLoggedIn = authInfo?.fullName
+
   const notificationData = [
     {
       icon: <SuccessIcon className='w-4 h-auto' fill='#25a56a' />,
@@ -103,8 +106,21 @@ function Navbar() {
           </div>
         </div>
         <div className='flex items-center cursor-pointer gap-[10px] group'>
-          <p className='group-hover:text-white text-grey-C0 duration-200 sm:block hidden'>Sign in</p>
-          <HiOutlineLogin className='text-grey-C0 group-hover:text-emerald duration-200' size={28} />
+          {isLoggedIn ? (
+            <>
+              <p className='group-hover:text-white text-grey-C0 duration-200 sm:block hidden'>
+                Welcome, {authInfo?.fullName}!
+              </p>
+              <HiOutlineLogout className='text-grey-C0 group-hover:text-emerald duration-200' size={28} />
+            </>
+          ) : (
+            <>
+              <Link to='/SignIn' className='group-hover:text-white text-grey-C0 duration-200 sm:block hidden'>
+                Sign in
+              </Link>
+              <HiOutlineLogin className='text-grey-C0 group-hover:text-emerald duration-200' size={28} />
+            </>
+          )}
           <FaBars className='xl:hidden block' size={28} />
         </div>
       </div>

@@ -87,7 +87,7 @@ function Signup() {
 
     try {
       if (email !== '' && password !== '' && isEmailValid(email) && isPasswordValid(password)) {
-        const response = await axios.post('http://localhost:8080/api/v1/users', dataForBE)
+        const response = await axios.post('http://localhost:8080/api/v1/auth/register', dataForBE)
 
         // Kiểm tra mã trạng thái của phản hồi
 
