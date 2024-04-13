@@ -6,7 +6,7 @@ import Tittle from '~/components/Titlle'
 function PrivacyPolicy() {
   return (
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative '>
-      <Breadcrumb name={'Privacy policy'} />
+      <Breadcrumb names={['Privacy policy']} />
       <Tittle nameTittle={'Privacy policy'} />
       <div className='flex gap-3 flex-col text-[#c0c0c0] text-base'>
         <span>

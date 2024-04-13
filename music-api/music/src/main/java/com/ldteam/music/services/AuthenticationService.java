@@ -50,14 +50,24 @@ public class AuthenticationService {
 
     public RegistrationResponse registerUser(RegistrationRequest registrationRequest) {
         Optional<User> existingUser = userRepository.findByEmail(registrationRequest.getEmail());
-        if (existingUser != null) {
+        if (existingUser.isPresent()) {
             return new RegistrationResponse("Email already exists");
         }
         User user = new User();
         user.setEmail(registrationRequest.getEmail());
         user.setPassword(registrationRequest.getPassword());
-        Role role = roleService.create("ROLE_USER");
-        user.setRoles(Set.of(role));
+        user.setUser_name(registrationRequest.getUser_name());
+        user.setFull_name(registrationRequest.getFull_name());
+        // Kiểm tra và thiết lập vai trò của người dùng
+        Set<Role> roles = new HashSet<>();
+        if ("ADMIN".equals(registrationRequest.getRole())) {
+            Role adminRole = roleService.create("ROLE_ADMIN");
+            roles.add(adminRole);
+        } else {
+            Role userRole = roleService.create("ROLE_USER");
+            roles.add(userRole);
+        }
+        user.setRoles(roles);
         userService.saveUser(user);
         return new RegistrationResponse("Registration successful");
     }

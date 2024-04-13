@@ -1,6 +1,7 @@
 package com.ldteam.music.services;
 
 import com.ldteam.music.entities.User;
+import com.ldteam.music.repositories.RoleRepository;
 import com.ldteam.music.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
