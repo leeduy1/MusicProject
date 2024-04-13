@@ -1,12 +1,113 @@
 import { AiOutlineArrowRight } from 'react-icons/ai'
+import { TiMicrophoneOutline } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
+import NewIcon1 from '~/assets/Icons/NewIcon1'
+import Note from '~/assets/Icons/Note'
 import Artist from '~/components/Artist'
 import NewItem from '~/components/NewItem'
+import TabNews1 from '~/components/News/TabNews1'
+import Podcast from '~/components/Podcast'
+import ProductSlide from '~/components/Product'
 import ReleaseCard from '~/components/ReleaseCard'
 import ReleaseCardSlide from '~/components/ReleaseCardSlide'
 import { SlideArrowNext, SlideArrowPrev } from '~/components/SlideArrow'
 
+interface IElement {
+  url: string
+  name: string
+  price: string
+  state: boolean
+}
+interface IPodcast {
+  state: boolean
+  url: string
+  viewers: string
+  img: string
+  name: string
+}
+
+const elements: IElement[] = [
+  { url: 'https://volna.volkovdesign.com/img/store/item1.jpg', name: 'Vinyl Player', price: '$1 099', state: true },
+  { url: 'https://volna.volkovdesign.com/img/store/item2.jpg', name: 'Microphone R4', price: '$799', state: false },
+  { url: 'https://volna.volkovdesign.com/img/store/item3.jpg', name: 'Music Blank', price: '$3.99', state: true },
+  {
+    url: 'https://volna.volkovdesign.com/img/store/item4.jpg',
+    name: 'Headphones ZR-991',
+    price: '$199',
+    state: false
+  },
+  { url: 'https://volna.volkovdesign.com/img/store/item5.jpg', name: 'Piano', price: '$11 899', state: false },
+  { url: 'https://volna.volkovdesign.com/img/store/item6.jpg', name: 'Vinyl Player', price: '$2 499', state: false },
+  { url: 'https://volna.volkovdesign.com/img/store/item7.jpg', name: 'Guitar', price: '$299', state: false },
+  { url: 'https://volna.volkovdesign.com/img/store/item8.jpg', name: 'Microphone R4s', price: '$199', state: false }
+]
+
+const podcastList: IPodcast[] = [
+  {
+    state: true,
+    url: 'https://www.youtube.com/watch?v=FN7ALfpGxiI&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '6.5k viewers',
+    img: 'https://volna.volkovdesign.com/img/live/1.jpg',
+    name: 'Beautiful Stories From Anonymous People'
+  },
+  {
+    state: true,
+    url: 'https://www.youtube.com/watch?v=Llw9Q6akRo4&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '1.7k viewers',
+    img: 'https://volna.volkovdesign.com/img/live/2.jpg',
+    name: 'Song Exploder'
+  },
+  {
+    state: true,
+    url: 'https://www.youtube.com/watch?v=xypzmu5mMPY&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '924 viewers',
+    img: 'https://volna.volkovdesign.com/img/live/3.jpg',
+    name: 'Broken Record'
+  },
+  {
+    state: true,
+    url: 'https://www.youtube.com/watch?v=r1OtnOs-utU&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '638 viewers',
+    img: 'https://volna.volkovdesign.com/img/live/4.jpg',
+    name: 'Desert Island Discs'
+  },
+  {
+    state: false,
+    url: 'https://www.youtube.com/watch?v=-vtBgNxMyZI&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '588 viewers',
+    img: 'https://volna.volkovdesign.com/img/live/5.jpg',
+    name: 'Riffs On Riffs'
+  },
+  {
+    state: false,
+    url: 'https://www.youtube.com/watch?v=PdbsnGuduvo&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '638 viewers',
+    img: 'https://volna.volkovdesign.com/img/live/6.jpg',
+    name: 'Popcast'
+  },
+  {
+    state: false,
+    url: 'https://www.youtube.com/watch?v=knW7-x7Y7RE&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '9.5k viewers',
+    img: 'https://volna.volkovdesign.com/img/live/7.jpg',
+    name: 'Rolling Stone Music Now'
+  },
+  {
+    state: false,
+    url: 'https://www.youtube.com/watch?v=Thf6-faRGI4&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '1.6K viewers',
+    img: 'https://volna.volkovdesign.com/img/live/8.jpg',
+    name: 'Song VS .Song'
+  },
+  {
+    state: false,
+    url: 'https://www.youtube.com/watch?v=2-zSSzg8i3Y&pp=ygUKc8ahbiB0w7luZw%3D%3D',
+    viewers: '638 viewers',
+    img: 'https://volna.volkovdesign.com/img/live/9.jpg',
+    name: 'Disgraceland'
+  }
+]
 interface IArtists {
   name: string
   url: string
@@ -30,6 +131,19 @@ function Home() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SlideArrowNext />,
+    prevArrow: <SlideArrowPrev />
+  }
+
+  const settingProduct = {
+    customPaging: function () {
+      return <div className={`dot w-[10px] h-1 bg-white bg-opacity-[0.6] duration-500 `}></div>
+    },
+    dots: false,
+    infinite: true,
+    speed: 400,
+    slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: <SlideArrowNext />,
     prevArrow: <SlideArrowPrev />
@@ -246,6 +360,20 @@ function Home() {
       creator: ['MoneyBagg']
     }
   ]
+  const settingPodcasts = {
+    customPaging: function () {
+      return <div className={`dot w-[10px] h-1 bg-white bg-opacity-[0.6] duration-500`}></div>
+    },
+    dots: false,
+    infinite: true,
+    speed: 400,
+    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesPerRow: 1,
+    nextArrow: <SlideArrowNext />,
+    prevArrow: <SlideArrowPrev />
+  }
+
   return (
     <div className='container'>
       <div className='slide-container min-[468px]:block hidden slideHome'>
@@ -343,14 +471,86 @@ function Home() {
               </Slider>
             </div>
           </div>
-          <div className='flex flex-row '>
-            <div>1</div>
-            <div>
-              <NewItem />
+          <div className='flex flex-row justify-center items-center'>
+            <div className='flex basis-1/3 max-w-[33.333333%] flex-col'>
+              <div className='flex flex-row items-center gap-2'>
+                <NewIcon1 className='w-7 h-7' />
+                <h1 className='text-3xl font-medium'>Top singles</h1>
+              </div>
+              <NewItem status={false} />
             </div>
-            <div>3</div>
+            <div className='flex basis-1/3 max-w-[33.333333%] flex-col'>
+              <div className='flex flex-row items-center gap-2'>
+                <Note className='w-7 h-7' />
+                <h1 className='text-3xl font-medium'>New singles</h1>
+              </div>
+              <NewItem status={false} />
+            </div>
+            <div className='flex basis-1/3 max-w-[33.333333%] flex-col'>
+              <div className='flex flex-row items-center gap-2'>
+                <TiMicrophoneOutline className='w-7 h-7 fill-emerald' />
+                <h1 className='text-3xl font-medium'>Podcasts</h1>
+              </div>
+              <NewItem status={false} />
+            </div>
           </div>
         </div>
+        <div className='flex justify-between items-center mb-5 mt-5'>
+          <h1 className='text-[30px] font-inter'>Podcasts</h1>
+          <div className='flex items-center gap-[10px] text-[#c0c0c0] cursor-pointer group '>
+            <Link to='/releases' className='group-hover:text-white duration-150'>
+              See all
+            </Link>
+            <AiOutlineArrowRight className='group-hover:text-emerald duration-150' />
+          </div>
+        </div>
+        <div className='w-full'>
+          <div className='slide-container block'>
+            <Slider {...settingPodcasts} className='pb-16'>
+              {podcastList.map((choose) => (
+                <div className='pr-3'>
+                  <Podcast
+                    state={choose.state}
+                    url={choose.url}
+                    viewers={choose.viewers}
+                    img={choose.img}
+                    name={choose.name}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+        <div className='flex justify-between items-center'>
+          <h1 className='text-[30px] font-inter'>Products</h1>
+          <div className='flex items-center gap-[10px] text-[#c0c0c0] cursor-pointer group '>
+            <Link to='/releases' className='group-hover:text-white duration-150'>
+              See all
+            </Link>
+            <AiOutlineArrowRight className='group-hover:text-emerald duration-150' />
+          </div>
+        </div>
+        <div className='w-full'>
+          <div className='slide-container block'>
+            <Slider className='pb-20' {...settingProduct}>
+              {elements.map((element) => {
+                return (
+                  <ProductSlide url={element.url} name={element.name} price={element.price} state={element.state} />
+                )
+              })}
+            </Slider>
+          </div>
+        </div>
+        <div className='flex justify-between items-center'>
+          <h1 className='text-[30px] font-inter'>News</h1>
+          <div className='flex items-center gap-[10px] text-[#c0c0c0] cursor-pointer group '>
+            <Link to='/releases' className='group-hover:text-white duration-150'>
+              See all
+            </Link>
+            <AiOutlineArrowRight className='group-hover:text-emerald duration-150' />
+          </div>
+        </div>
+        <TabNews1 state={false} />
       </div>
     </div>
   )

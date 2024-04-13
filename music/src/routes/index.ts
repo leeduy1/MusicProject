@@ -13,6 +13,7 @@ import PricingPlan from '~/pages/PricingPlan'
 import PrivacyPolicy from '~/pages/PrivacyPolicy'
 import Product from '~/pages/Product'
 import Profile from '~/pages/Profile'
+import Release from '~/pages/Release'
 import Releases from '~/pages/Releases'
 import Signin from '~/pages/Signin'
 import Signup from '~/pages/Signup'
@@ -37,7 +38,8 @@ const publicRoutes = [
   { path: '/contact', component: Contact },
   { path: '/pricingplans', component: PricingPlan },
   { path: '/privacypolicy', component: PrivacyPolicy },
-  { path: '/forgotpass', component: ForgotPassWord }
+  { path: '/forgotpass', component: ForgotPassWord },
+  { path: '/release', component: Release }
 ]
 
 export { publicRoutes }

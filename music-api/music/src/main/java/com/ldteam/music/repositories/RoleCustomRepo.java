@@ -24,19 +24,23 @@ public class RoleCustomRepo {
         StringBuilder sql = new StringBuilder()
                 .append("select r.name as name from users u join users_role ur on u.id = ur.users_id\n" +
                         "join roles r on r.id = ur.roles_id ");
-        sql.append("Where 1=1 ");
-        if(user.getEmail() != null) {
-            sql.append(" and email = :email");
+        sql.append("where 1=1 "); // Điều kiện để bắt đầu câu truy vấn
+
+        // Thêm điều kiện lọc theo ID của người dùng nếu đã được truyền vào
+        if (user.getId() != null) {
+            sql.append("and u.id = :userId ");
         }
 
         NativeQuery<Role> query = ((Session) entityManager.getDelegate()).createNativeQuery(sql.toString());
 
-        if(user.getEmail() != null) {
-            query.setParameter("email", user.getEmail());
+        // Nếu có ID của người dùng được truyền vào, thiết lập tham số userId
+        if (user.getId() != null) {
+            query.setParameter("userId", user.getId());
         }
 
         query.addScalar("name", StandardBasicTypes.STRING);
         query.setResultTransformer(Transformers.aliasToBean(Role.class));
         return query.list();
     }
+
 }

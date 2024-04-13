@@ -33,7 +33,7 @@ function Profile() {
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
       <div className='w-full'>
         {/* BreadCrumb */}
-        <Breadcrumb name='Profile' />
+        <Breadcrumb names={['Profile']} />
         {/* EndBreadCrumb */}
         {/* Tiltle */}
         <div className='flex flex-wrap mx-[-15] mt-[50px] basic-full grow-0'>

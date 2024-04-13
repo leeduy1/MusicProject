@@ -247,7 +247,7 @@ function TabOne() {
                 </Link>
               </div>
             </div>
-            <NewItem />
+            <NewItem status={true} />
           </div>
         </div>
         {/* end dashbox */}

@@ -76,7 +76,7 @@ function Sign_in() {
 
   return (
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
-      <Breadcrumb name={'Sign in'} />
+      <Breadcrumb names={['Sign in']} />
       <div className='w-full'>
         <div className='md:px-[15px] max-w-full basis-full px-2.5'>
           <div className='block relative'>

@@ -14,7 +14,7 @@ function News() {
   const handleChangeTab = () => {
     switch (currentTab) {
       case 1:
-        return <TabNews1 />
+        return <TabNews1 state={true} />
       case 2:
         return <TabNews2 />
       case 3:
@@ -29,7 +29,7 @@ function News() {
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative '>
       <div className='w-full'>
         {/* BreadCrumb */}
-        <Breadcrumb name={'News'} />
+        <Breadcrumb names={['News']} />
         {/* EndBreadCrumb */}
         {/* Tiltle */}
         <Tittle nameTittle={'News'} />

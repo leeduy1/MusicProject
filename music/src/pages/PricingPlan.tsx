@@ -52,7 +52,7 @@ function PricingPlan() {
   ]
   return (
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative '>
-      <Breadcrumb name={'Pricing plans'} />
+      <Breadcrumb names={['Pricing plans']} />
       <Tittle nameTittle={'Pricing plans'} />
       <div className='mt-5 text-[#c0c0c0]'>
         <span>

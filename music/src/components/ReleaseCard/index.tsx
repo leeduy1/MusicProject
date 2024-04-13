@@ -1,5 +1,6 @@
 import { BsPlay, BsHeadphones } from 'react-icons/bs'
 import { AiOutlineBars } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 interface IProps {
   thumbnail: string
   numbersOfVideo: string
@@ -28,14 +29,12 @@ function ReleaseCard({ thumbnail, numbersOfVideo, numbersOfListener, name, autho
           </div>
         </div>
       </div>
-      <div className='flex flex-col justify-center w-[85%] mt-2'>
-        <a href='' className='hover:text-emerald duration-500 text-[16px]'>
-          {name}
-        </a>
-        <a className='text-[#C0C0C0] hover:text-emerald duration-500 line-clamp-1' href=''>
+      <Link to='/release' className='flex flex-col justify-center w-[85%] mt-2'>
+        <span className='hover:text-emerald duration-500 text-[16px]'>{name}</span>
+        <Link className='text-[#C0C0C0] hover:text-emerald duration-500 line-clamp-1' to='/artistdetail'>
           {authors?.join(' & ')}
-        </a>
-      </div>
+        </Link>
+      </Link>
     </div>
   )
 }

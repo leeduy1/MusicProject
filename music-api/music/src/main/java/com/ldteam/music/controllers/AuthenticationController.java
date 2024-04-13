@@ -53,6 +53,7 @@ public class AuthenticationController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/register")
     public ResponseEntity<RegistrationResponse> register(@RequestBody RegistrationRequest registrationRequest) {
+
         // Lấy mật khẩu từ yêu cầu đăng ký
         String password = registrationRequest.getPassword();
 

@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import BreadcrumbIcon from '~/assets/Icons/BreadcrumbIcon'
 import Facebookicon1 from '~/assets/Icons/Facebookicon1'
 import GoogleIcon from '~/assets/Icons/GoogleIcon'
 import Twittericon1 from '~/assets/Icons/Twittericon1'
+import Breadcrumb from '~/components/BreadCrumb'
 import Logo from '~/components/Logo'
 
 function Signup() {
@@ -78,11 +78,10 @@ function Signup() {
       password: password,
       roles: [
         {
-          id: 0,
-          name: 'USER'
+          id: '0',
+          name: 'ADMIN'
         }
-      ],
-      username: user_name
+      ]
     }
 
     try {
@@ -91,10 +90,13 @@ function Signup() {
 
         // Kiểm tra mã trạng thái của phản hồi
 
-        if (response.status === 200) {
+        if (response.data.message === 'Registration successful') {
           setIsSignUpSuccess(true)
           setContainerOpacity(0.3) // Set opacity desired value here
           // window.location.href = '/SignIn'
+        }
+        if (response.data.message === 'Email already exists') {
+          setErrorEmail(response.data.message)
         }
       }
     } catch (error) {
@@ -110,21 +112,7 @@ function Signup() {
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative'>
       <div className={`w-full`} style={{ opacity: containerOpacity }}>
         {/* BreadCrumb */}
-        <div className='md: flex flex-wrap basic-full grow-0 shrink-0'>
-          <div className='max-w-full relative'>
-            <ul className='flex flex-row justify-start items-center flex-wrap max-w-full list-none'>
-              <li className='flex left-full h-[34px] items-center justify-center text-sm cursor-default'>
-                <Link
-                  className='duration-[0.3s] ease-out cursor-pointer text-[#c0c0c0] hover:text-[#25a56a] hover:ease-in '
-                  to='/'
-                >
-                  Home
-                </Link>{' '}
-                <BreadcrumbIcon className='w-[20px] opacity-75' /> <p className='text-[#c0c0c0]'>Sign up</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Breadcrumb names={['Sign up']} />
         {/* BreadCrumb */}
         <div className='md:px-[15px] max-w-full basis-full px-2.5'>
           <div className='block relative'>

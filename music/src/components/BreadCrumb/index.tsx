@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import BreadcrumbIcon from '~/assets/Icons/BreadcrumbIcon'
 
 interface IBreadCrumb {
-  name: string
+  names: string[]
 }
-function Breadcrumb({ name }: IBreadCrumb) {
+
+function Breadcrumb({ names }: IBreadCrumb) {
   return (
     <div className='md: flex flex-wrap basic-full grow-0 shrink-0'>
       <div className='max-w-full relative'>
@@ -17,7 +18,13 @@ function Breadcrumb({ name }: IBreadCrumb) {
             >
               Home
             </Link>
-            <BreadcrumbIcon className='w-[20px] opacity-75' /> <p className='opacity-75'>{name}</p>
+            <BreadcrumbIcon className='w-[20px] opacity-75' />
+            {names.map((name, index) => (
+              <React.Fragment key={index}>
+                <p className='opacity-75'>{name}</p>
+                {index !== names.length - 1 && <BreadcrumbIcon className='w-[20px] opacity-75' />}
+              </React.Fragment>
+            ))}
           </li>
         </ul>
       </div>

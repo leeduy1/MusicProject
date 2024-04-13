@@ -10,7 +10,12 @@ interface IItems {
   singer: string
   time: string
 }
-function NewItem() {
+
+interface Ivisible {
+  status: boolean
+}
+
+function NewItem({ status }: Ivisible) {
   const ItemsList: IItems[] = [
     { song: 'Making my way', singer: 'Sơn Tùng MTP', time: '3.12' },
     { song: 'Yêu', singer: 'Khắc Việt', time: '4.25' },
@@ -22,7 +27,7 @@ function NewItem() {
   ]
   return (
     <div className='p-5 relative block w-full'>
-      <ul className='md:mt-0 overflow-auto max-h-[320px]'>
+      <ul className={status ? `md:mt-0 overflow-auto max-h-[320px]` : `md:mt-0 overflow-hidden max-h-[320px]`}>
         {ItemsList.map((item) => {
           return (
             <li className='flex flex-row justify-start items-center mb-2.5 pb-0.5 border-b border-solid border-[#222227] h-[58px] duration-300 ease-in-out group relative'>
@@ -49,13 +54,21 @@ function NewItem() {
               </div>
               <Link
                 to=''
-                className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15] duration-500 ease-in-out hover:bg-opacity-50'
+                className={
+                  status
+                    ? `flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#25a56a] bg-opacity-[0.15] duration-500 ease-in-out hover:bg-opacity-50`
+                    : `invisible`
+                }
               >
                 <AddIcon className='w-[18px] h-auto fill-emerald' />
               </Link>
               <Link
                 to=''
-                className='flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#8051d4] bg-opacity-[0.15] duration-500 ease-in-out hover:bg-opacity-50'
+                className={
+                  status
+                    ? `flex ml-[15px] flex-row justify-center items-center w-[32px] h-[32px] rounded-lg bg-[#8051d4] bg-opacity-[0.15] duration-500 ease-in-out hover:bg-opacity-50`
+                    : `invisible`
+                }
               >
                 <ExportIcon className='w-[18px] h-auto' />
               </Link>

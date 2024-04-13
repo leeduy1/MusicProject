@@ -103,7 +103,7 @@ function Store() {
     <div className='md:pt-[30px] pb-[70px] sm:pt-5 sm:pb-[50px] w-full px-[30px] mx-auto pt-[20px] relative '>
       <div className='w-full'>
         {/* BreadCrumb */}
-        <Breadcrumb name={'Store'} />
+        <Breadcrumb names={['Store']} />
         {/* EndBreadCrumb */}
         {/* Tiltle */}
         <Tittle nameTittle={'Store'} />
